@@ -444,6 +444,47 @@ def _add_nonempty_trailing_ds57_column(text: str) -> str:
     return "\n".join(lines) + "\n"
 
 
+def _truncate_ds57_row(text: str, *, line_index: int, missing_fields: int) -> str:
+    lines = text.splitlines()
+    values = next(csv.reader([lines[line_index]]))
+    output = StringIO()
+    csv.writer(output, lineterminator="").writerow(values[:-missing_fields])
+    lines[line_index] = output.getvalue()
+    return "\n".join(lines) + "\n"
+
+
+@pytest.mark.parametrize(
+    ("prefix", "line_index", "missing_fields"),
+    [
+        ("Metadata_Indicator_", 1, 2),
+        ("Metadata_Country_", 1, 1),
+        ("API_", 5, 1),
+    ],
+)
+def test_ds57_archive_rejects_truncated_member_rows(
+    tmp_path: Path, prefix: str, line_index: int, missing_fields: int
+) -> None:
+    indicator = "EN.ATM.METH.KT.CE"
+    members = _replace_ds57_member(
+        _canonical_ds57_members(indicator),
+        prefix,
+        lambda text: _truncate_ds57_row(
+            text, line_index=line_index, missing_fields=missing_fields
+        ),
+    )
+    path = tmp_path / "archive.zip"
+    _write_ds57_zip(path, indicator, members=members)
+    lock = _lock(
+        content=path.read_bytes(),
+        source_family="wdi_archive_ds57",
+        source_id="57",
+        indicator=indicator,
+    )
+
+    with pytest.raises(SourceSchemaError, match="truncated|schema"):
+        read_wdi_archive(path, lock, years=YEARS)
+
+
 @pytest.mark.parametrize(
     ("prefix", "transform", "match"),
     [

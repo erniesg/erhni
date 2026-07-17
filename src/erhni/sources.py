@@ -500,6 +500,10 @@ def _csv_rows(
     for row in rows:
         if None in row:
             raise SourceSchemaError("DS57 member row exceeds its declared schema")
+        if any(value is None for value in row.values()):
+            raise SourceSchemaError(
+                "DS57 member row is truncated relative to its declared schema"
+            )
         if trailing_empty_column:
             if str(row.get("", "")).strip():
                 raise SourceSchemaError(
