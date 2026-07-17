@@ -23,6 +23,10 @@ pattern = "data/derived/restricted/**"
 disclosure_class = "restricted_derived"
 
 [[disclosure_rule]]
+pattern = "data/derived/source_manifest.json"
+disclosure_class = "public_aggregate"
+
+[[disclosure_rule]]
 pattern = "outputs/restricted/**"
 disclosure_class = "restricted_derived"
 

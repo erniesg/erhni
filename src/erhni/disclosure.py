@@ -152,6 +152,9 @@ def release_role_for_path(config: DisclosureConfig, path: str | Path) -> str:
     """Return the one public release role for an allow-listed repository path."""
 
     normalized = _normalise(path)
+    disclosure_class = classify_path(config, normalized)
+    if disclosure_class is not None and disclosure_class not in PUBLIC_DISCLOSURE_CLASSES:
+        raise ConfigError(f"non-public disclosure class cannot receive a release role: {normalized}")
     matches = _matches(normalized, config.release_role_rules)
     if len(matches) != 1:
         detail = "no" if not matches else "multiple"
@@ -162,10 +165,4 @@ def release_role_for_path(config: DisclosureConfig, path: str | Path) -> str:
 def validate_staged_path(config: DisclosureConfig, path: str | Path) -> str:
     """Validate a release candidate without granting any deny-list fallback."""
 
-    disclosure_class = classify_path(config, path)
-    if disclosure_class is not None and disclosure_class not in PUBLIC_DISCLOSURE_CLASSES:
-        raise ConfigError(f"non-public disclosure class cannot be staged: {path}")
-    release_role = release_role_for_path(config, path)
-    if disclosure_class is not None and release_role != disclosure_class:
-        raise ConfigError(f"disclosure class and release role disagree: {path}")
-    return release_role
+    return release_role_for_path(config, path)

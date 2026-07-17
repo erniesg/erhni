@@ -167,6 +167,105 @@ def test_non_five_aqli_benchmark_fails_closed(tmp_path: Path) -> None:
 
 
 @pytest.mark.parametrize(
+    ("needle", "replacement"),
+    [
+        ("scale = 10.0", "scale = 9.0"),
+        ("max_abs_wld_reconciliation_share = 0.05", "max_abs_wld_reconciliation_share = 0.04"),
+        ("gross_penalty_weight = true", "gross_penalty_weight = false"),
+        (
+            "fixed_penalty_weights = [0.05, 0.10, 0.25, 0.50, 0.765, 1.00]",
+            "fixed_penalty_weights = [0.10, 0.05, 0.25, 0.50, 0.765, 1.00]",
+        ),
+        ("neutral_points = [4.0, 4.5, 5.0, 5.1]", "neutral_points = [4.0, 4.5, 5.1]"),
+        ("aqli_rounding_half_width = 0.05", "aqli_rounding_half_width = 0.1"),
+        ("lower_bound_floor = 0.0", "lower_bound_floor = 0.1"),
+        (
+            'label = "rounding_sensitivity_not_confidence_interval"',
+            'label = "confidence_interval"',
+        ),
+        ('decomposition = "shapley"', 'decomposition = "sequential"'),
+        ("relative_tolerance = 1e-10", "relative_tolerance = 1e-8"),
+    ],
+)
+def test_every_method_constant_is_an_exact_pin(
+    tmp_path: Path, needle: str, replacement: str
+) -> None:
+    candidate = tmp_path / "method.toml"
+    candidate.write_text(
+        Path("config/method.toml").read_text(encoding="utf-8").replace(needle, replacement),
+        encoding="utf-8",
+    )
+
+    with pytest.raises(ConfigError, match="pin"):
+        load_method(candidate)
+
+
+@pytest.mark.parametrize(
+    ("needle", "replacement"),
+    [
+        (
+            "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?date=2016:2018&format=json&per_page=20000",
+            "https://example.invalid/changed",
+        ),
+        ("data/snapshots/wdi/SP.POP.TOTL.json", "data/snapshots/wdi/changed.json"),
+        ('publisher = "World Bank"', 'publisher = "Changed publisher"'),
+        ('source_family = "wdi_current"', 'source_family = "edgar_ar5_excl_lulucf"'),
+        ('unit = "Mt CO2 equivalent"', 'unit = "kt CO2 equivalent"'),
+        ('expected_source_id = "57"', 'expected_source_id = "2"'),
+        ('expected_indicator = "EN.GHG.CH4.MT.CE.AR5"', 'expected_indicator = "EN.GHG.N2O.MT.CE.AR5"'),
+        ("redistributable = false", "redistributable = true"),
+        (
+            "65bf00ba910932d408debb37dce3ea769eb2f1d3d0aef81f223b77947b81be73",
+            "00bf00ba910932d408debb37dce3ea769eb2f1d3d0aef81f223b77947b81be73",
+        ),
+        ("source_updated_at = \"2025-08-19T13:13:14Z\"", "source_updated_at = \"2025-08-20T00:00:00Z\""),
+    ],
+)
+def test_canonical_source_lock_rejects_each_changed_field(
+    tmp_path: Path, needle: str, replacement: str
+) -> None:
+    candidate = tmp_path / "sources.toml"
+    candidate.write_text(
+        Path("config/sources.toml").read_text(encoding="utf-8").replace(needle, replacement, 1),
+        encoding="utf-8",
+    )
+
+    with pytest.raises(ConfigError, match="canonical source lock"):
+        load_sources(candidate)
+
+
+@pytest.mark.parametrize(
+    "content_transform",
+    [
+        lambda content: content.replace('key = "wdi_ghg_ch4"', 'key = "wdi_extra"', 1),
+        lambda content: content
+        + """
+[[source]]
+key = "unregistered_source"
+url = "https://example.invalid/source"
+path = "data/snapshots/unregistered.json"
+publisher = "Example"
+source_family = "wdi_current"
+unit = "metadata"
+expected_source_id = "2"
+access_date = "2026-07-17"
+redistributable = true
+sha256 = "0000000000000000000000000000000000000000000000000000000000000000"
+""",
+    ],
+)
+def test_canonical_source_lock_rejects_missing_or_extra_keys(tmp_path: Path, content_transform) -> None:
+    candidate = tmp_path / "sources.toml"
+    candidate.write_text(
+        content_transform(Path("config/sources.toml").read_text(encoding="utf-8")),
+        encoding="utf-8",
+    )
+
+    with pytest.raises(ConfigError, match="canonical source lock"):
+        load_sources(candidate)
+
+
+@pytest.mark.parametrize(
     ("replacement", "match"),
     [
         ('source_family = "unknown"', "source_family"),

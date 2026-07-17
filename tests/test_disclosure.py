@@ -1,9 +1,16 @@
 from __future__ import annotations
 
+from pathlib import Path
+
 import pytest
 
 from erhni.config import ConfigError
-from erhni.disclosure import classify_path, release_role_for_path, validate_staged_path
+from erhni.disclosure import (
+    classify_path,
+    load_disclosure,
+    release_role_for_path,
+    validate_staged_path,
+)
 
 
 @pytest.mark.parametrize(
@@ -24,6 +31,7 @@ from erhni.disclosure import classify_path, release_role_for_path, validate_stag
         ("outputs/review/tables/country_rankings.csv", "review_only"),
         ("data/derived/public/global_summary.csv", "public_aggregate"),
         ("outputs/public/global_summary.csv", "public_aggregate"),
+        ("data/derived/source_manifest.json", "public_aggregate"),
     ],
 )
 def test_every_planned_data_artifact_has_one_disclosure_class(
@@ -65,10 +73,37 @@ def test_restricted_review_and_unknown_paths_cannot_be_staged(disclosure, path: 
         validate_staged_path(disclosure, path)
 
 
-def test_restricted_manifest_is_public_evidence_but_not_a_data_disclosure(disclosure) -> None:
+def test_source_manifest_is_public_aggregate_evidence(disclosure) -> None:
     path = "data/derived/source_manifest.json"
     assert release_role_for_path(disclosure, path) == "public_evidence"
-    assert classify_path(disclosure, path) is None
+    assert classify_path(disclosure, path) == "public_aggregate"
+    assert validate_staged_path(disclosure, path) == "public_evidence"
+
+
+@pytest.mark.parametrize(
+    "path",
+    [
+        "data/raw/external/whr_2022_data_for_table_2_1.xls",
+        "data/derived/restricted/happiness_annual.csv",
+        "outputs/review/tables/country_rankings.csv",
+    ],
+)
+def test_release_role_api_rejects_nonpublic_scientific_classes_even_if_policy_maps_them(
+    tmp_path, path: str
+) -> None:
+    policy_path = tmp_path / "disclosure.toml"
+    policy_path.write_text(
+        Path("config/disclosure.toml").read_text(encoding="utf-8")
+        + f"""
+[[release_role_rule]]
+pattern = \"{path.rsplit('/', 1)[0]}/**\"
+release_role = \"public_evidence\"
+""",
+        encoding="utf-8",
+    )
+
+    with pytest.raises(ConfigError, match="non-public disclosure"):
+        release_role_for_path(load_disclosure(policy_path), path)
 
 
 def test_disclosure_is_fail_closed_for_unclassified_artifacts(disclosure) -> None:
