@@ -1,7 +1,9 @@
 from __future__ import annotations
 
+import csv
 from dataclasses import replace
 from hashlib import sha256
+from io import StringIO
 import json
 from pathlib import Path
 from shutil import copy2
@@ -14,6 +16,7 @@ import pytest
 from erhni.config import REPOSITORY_ROOT, SourceLock, load_sources
 from erhni.disclosure import ConfigError, load_disclosure, validate_staged_path
 from erhni.sources import (
+    SourceAcquisitionError,
     SourceFamilyError,
     SourceIntegrityError,
     SourceSchemaError,
@@ -26,6 +29,7 @@ from erhni.sources import (
     read_whr_annual,
     resolve_source_path,
     validate_all,
+    validate_source,
 )
 
 
@@ -44,6 +48,12 @@ def _lock(
     indicator: str | None = "SP.POP.TOTL",
     redistributable: bool = True,
 ) -> SourceLock:
+    if (
+        source_family == "wdi_archive_ds57"
+        and relative_path == "data/snapshots/wdi/fixture.bin"
+        and indicator is not None
+    ):
+        relative_path = f"data/snapshots/wdi_archive/{indicator}.zip"
     return SourceLock(
         key=key,
         url=f"https://example.invalid/{key}",
@@ -132,6 +142,36 @@ def test_aqli_direct_fields_zeros_and_blank_exclusions() -> None:
     assert not ((frame["iso3"] == "USA") & (frame["year"] == 2016)).any()
 
 
+def test_aqli_whitespace_only_cells_are_exclusions(tmp_path: Path) -> None:
+    path = tmp_path / "aqli.csv"
+    path.write_text(
+        "id,whostandard,who2016,who2017,who2018\nCHN,5,   ,1.0,0.0\n",
+        encoding="utf-8",
+    )
+
+    frame = read_aqli(path, years=YEARS)
+
+    assert tuple(frame["year"]) == (2017, 2018)
+    assert tuple(frame["aqli_years_lost"]) == (1.0, 0.0)
+
+
+@pytest.mark.parametrize(
+    "token",
+    ["N/A", "NA", "null", "NaN", "garbage", "Infinity", "-Infinity", "inf", "-inf"],
+)
+def test_aqli_rejects_nonempty_tokens_and_nonfinite_numbers(
+    tmp_path: Path, token: str
+) -> None:
+    path = tmp_path / "aqli.csv"
+    path.write_text(
+        f"id,whostandard,who2016,who2017,who2018\nCHN,5,{token},1,1\n",
+        encoding="utf-8",
+    )
+
+    with pytest.raises(SourceSchemaError, match="nonnumeric|finite"):
+        read_aqli(path, years=YEARS)
+
+
 @pytest.mark.parametrize(
     ("content", "match"),
     [
@@ -203,12 +243,11 @@ def test_wdi_ghg_metadata_locks_source_boundary_ar5_and_co2_equivalent() -> None
     assert summary["already_co2_equivalent"] is True
 
 
-def test_wdi_ghg_metadata_rejects_unexpected_source_or_boundary(tmp_path: Path) -> None:
+def test_wdi_ghg_metadata_rejects_unexpected_source(tmp_path: Path) -> None:
     payload = json.loads(
         (FIXTURES / "wdi_ghg_metadata.json").read_text(encoding="utf-8")
     )
     payload[1][0]["source"]["id"] = "57"
-    payload[1][0]["sourceNote"] = "Raw methane mass under AR5."
     path = tmp_path / "metadata.json"
     path.write_text(json.dumps(payload), encoding="utf-8")
     lock = _lock(
@@ -217,21 +256,138 @@ def test_wdi_ghg_metadata_rejects_unexpected_source_or_boundary(tmp_path: Path) 
         indicator="EN.GHG.CH4.MT.CE.AR5",
     )
 
-    with pytest.raises(SourceSchemaError, match="source|LULUCF|CO2"):
+    with pytest.raises(SourceSchemaError, match="source"):
         read_wdi_metadata(path, lock)
 
 
-def _write_ds57_zip(path: Path, indicator: str = "EN.ATM.METH.KT.CE") -> None:
-    members = {
-        f"API_{indicator}_DS57_en_csv_v2_1.csv": FIXTURES / "ds57_observations.csv",
-        f"Metadata_Indicator_API_{indicator}_DS57_en_csv_v2_1.csv": FIXTURES
-        / "ds57_indicator.csv",
-        f"Metadata_Country_API_{indicator}_DS57_en_csv_v2_1.csv": FIXTURES
-        / "ds57_country.csv",
+def test_wdi_ghg_metadata_rejects_contradictory_lulucf_boundary(
+    tmp_path: Path,
+) -> None:
+    payload = json.loads(
+        (FIXTURES / "wdi_ghg_metadata.json").read_text(encoding="utf-8")
+    )
+    payload[1][0]["sourceNote"] = (
+        "This measure does not exclude LULUCF and is standardized to carbon dioxide "
+        "equivalent values using IPCC AR5 global warming potentials."
+    )
+    path = tmp_path / "metadata.json"
+    path.write_text(json.dumps(payload), encoding="utf-8")
+    lock = _lock(
+        source_family="edgar_ar5_excl_lulucf",
+        unit="metadata",
+        indicator="EN.GHG.CH4.MT.CE.AR5",
+    )
+
+    with pytest.raises(SourceSchemaError, match="exclude LULUCF|contradict"):
+        read_wdi_metadata(path, lock)
+
+
+def test_wdi_ghg_metadata_rejects_contradictory_co2e_standardization(
+    tmp_path: Path,
+) -> None:
+    payload = json.loads(
+        (FIXTURES / "wdi_ghg_metadata.json").read_text(encoding="utf-8")
+    )
+    payload[1][0]["sourceNote"] = (
+        "This measure excludes LULUCF but is not standardized to carbon dioxide "
+        "equivalent values using IPCC AR5 global warming potentials."
+    )
+    path = tmp_path / "metadata.json"
+    path.write_text(json.dumps(payload), encoding="utf-8")
+    lock = _lock(
+        source_family="edgar_ar5_excl_lulucf",
+        unit="metadata",
+        indicator="EN.GHG.CH4.MT.CE.AR5",
+    )
+
+    with pytest.raises(SourceSchemaError, match="standardization|standardized"):
+        read_wdi_metadata(path, lock)
+
+
+def _csv_text(fieldnames: list[str], rows: list[dict[str, str]]) -> str:
+    output = StringIO()
+    writer = csv.DictWriter(output, fieldnames=fieldnames, lineterminator="\n")
+    writer.writeheader()
+    writer.writerows(rows)
+    return output.getvalue()
+
+
+def _canonical_ds57_members(indicator: str) -> dict[str, str]:
+    revision = "1"
+    observation_fields = [
+        "Country Name",
+        "Country Code",
+        "Indicator Name",
+        "Indicator Code",
+        *(str(year) for year in range(1960, 2026)),
+    ]
+    indicator_name = "Methane emissions (kt of CO2 equivalent)"
+    observation_rows = []
+    for name, code, values in (
+        ("China", "CHN", {"2016": "100", "2017": "101", "2018": "102"}),
+        ("World", "WLD", {"2016": "1000", "2017": "1001", "2018": "1002"}),
+    ):
+        observation_rows.append(
+            {
+                "Country Name": name,
+                "Country Code": code,
+                "Indicator Name": indicator_name,
+                "Indicator Code": indicator,
+                **values,
+            }
+        )
+    observation_text = (
+        "Data Source,WDI Database Archives\n\n"
+        "Last Updated Date,2025-10-29\n\n"
+        + _csv_text(observation_fields, observation_rows)
+    )
+    indicator_text = _csv_text(
+        ["INDICATOR_CODE", "INDICATOR_NAME", "SOURCE_NOTE", "SOURCE_ORGANIZATION"],
+        [
+            {
+                "INDICATOR_CODE": indicator,
+                "INDICATOR_NAME": indicator_name,
+                "SOURCE_NOTE": "Archived methane series",
+                "SOURCE_ORGANIZATION": "World Resources Institute",
+            }
+        ],
+    )
+    country_text = _csv_text(
+        ["Country Code", "Region", "IncomeGroup", "SpecialNotes", "TableName"],
+        [
+            {
+                "Country Code": "CHN",
+                "Region": "East Asia & Pacific",
+                "IncomeGroup": "Upper middle income",
+                "SpecialNotes": "",
+                "TableName": "China",
+            },
+            {
+                "Country Code": "WLD",
+                "Region": "",
+                "IncomeGroup": "",
+                "SpecialNotes": "World aggregate",
+                "TableName": "World",
+            },
+        ],
+    )
+    return {
+        f"API_{indicator}_DS57_en_csv_v2_{revision}.csv": observation_text,
+        f"Metadata_Indicator_API_{indicator}_DS57_en_csv_v2_{revision}.csv": indicator_text,
+        f"Metadata_Country_API_{indicator}_DS57_en_csv_v2_{revision}.csv": country_text,
     }
+
+
+def _write_ds57_zip(
+    path: Path,
+    indicator: str = "EN.ATM.METH.KT.CE",
+    *,
+    members: dict[str, str] | None = None,
+) -> None:
+    members = _canonical_ds57_members(indicator) if members is None else members
     with ZipFile(path, "w", ZIP_DEFLATED) as archive:
-        for name, source in members.items():
-            archive.writestr(name, source.read_bytes())
+        for name, content in members.items():
+            archive.writestr(name, content)
 
 
 def test_ds57_archive_identifies_source_and_validates_members_offline(
@@ -251,6 +407,7 @@ def test_ds57_archive_identifies_source_and_validates_members_offline(
     assert set(frame["source_id"]) == {"57"}
     assert set(frame["indicator"]) == {"EN.ATM.METH.KT.CE"}
     assert "WLD" in set(frame["iso3"])
+    assert frame["country_metadata_member"].all()
 
     with pytest.raises(SourceFamilyError, match="successor|family|JSON"):
         read_wdi_observations(path, lock, years=YEARS)
@@ -270,23 +427,251 @@ def test_ds57_archive_rejects_missing_or_unexpected_members(tmp_path: Path) -> N
         read_wdi_archive(path, lock, years=YEARS)
 
 
+def _replace_ds57_member(
+    members: dict[str, str], prefix: str, transform
+) -> dict[str, str]:
+    changed = dict(members)
+    name = next(name for name in changed if name.startswith(prefix))
+    changed[name] = transform(changed[name])
+    return changed
+
+
+def _add_nonempty_trailing_ds57_column(text: str) -> str:
+    lines = text.splitlines()
+    lines[4] += ","
+    lines[5] += ",unexpected"
+    lines[6] += ","
+    return "\n".join(lines) + "\n"
+
+
+@pytest.mark.parametrize(
+    ("prefix", "transform", "match"),
+    [
+        (
+            "Metadata_Indicator_",
+            lambda text: text.replace("Archived methane series", ""),
+            "nonblank|metadata",
+        ),
+        (
+            "Metadata_Indicator_",
+            lambda text: text + text.splitlines()[1] + "\n",
+            "one indicator|metadata",
+        ),
+        (
+            "Metadata_Country_",
+            lambda text: text + text.splitlines()[1] + "\n",
+            "duplicate|country",
+        ),
+        (
+            "Metadata_Country_",
+            lambda text: text.replace("CHN,", ",", 1),
+            "nonblank country codes|country metadata",
+        ),
+        (
+            "Metadata_Country_",
+            lambda text: text.replace("Country Code,", "Unexpected,", 1),
+            "columns|schema",
+        ),
+        (
+            "API_",
+            lambda text: text.replace(",2025\n", ",2025,Unexpected\n", 1),
+            "columns|schema",
+        ),
+        (
+            "API_",
+            _add_nonempty_trailing_ds57_column,
+            "trailing|schema",
+        ),
+        (
+            "API_",
+            lambda text: text.replace(",CHN,", ",ZZZ,", 1),
+            "country metadata|membership|inconsistent",
+        ),
+    ],
+)
+def test_ds57_archive_rejects_corrupt_member_schemas(
+    tmp_path: Path, prefix: str, transform, match: str
+) -> None:
+    indicator = "EN.ATM.METH.KT.CE"
+    members = _replace_ds57_member(
+        _canonical_ds57_members(indicator), prefix, transform
+    )
+    path = tmp_path / "archive.zip"
+    _write_ds57_zip(path, indicator, members=members)
+    lock = _lock(
+        content=path.read_bytes(),
+        source_family="wdi_archive_ds57",
+        source_id="57",
+        indicator=indicator,
+    )
+
+    with pytest.raises(SourceSchemaError, match=match):
+        read_wdi_archive(path, lock, years=YEARS)
+
+
+def test_ds57_archive_rejects_noncanonical_source57_member_name(tmp_path: Path) -> None:
+    indicator = "EN.ATM.METH.KT.CE"
+    members = _canonical_ds57_members(indicator)
+    name = next(name for name in members if name.startswith("API_"))
+    members[name.replace("DS57", "DS58")] = members.pop(name)
+    path = tmp_path / "archive.zip"
+    _write_ds57_zip(path, indicator, members=members)
+    lock = _lock(
+        content=path.read_bytes(),
+        source_family="wdi_archive_ds57",
+        source_id="57",
+        indicator=indicator,
+    )
+
+    with pytest.raises(SourceSchemaError, match="member|source 57|DS57"):
+        read_wdi_archive(path, lock, years=YEARS)
+
+
+def test_ds57_archive_rejects_noncanonical_lock_path(tmp_path: Path) -> None:
+    indicator = "EN.ATM.METH.KT.CE"
+    path = tmp_path / "archive.zip"
+    _write_ds57_zip(path, indicator)
+    lock = _lock(
+        content=path.read_bytes(),
+        relative_path="data/snapshots/wdi_archive/not-the-indicator.zip",
+        source_family="wdi_archive_ds57",
+        source_id="57",
+        indicator=indicator,
+    )
+
+    with pytest.raises(SourceFamilyError, match="lock|path|family"):
+        read_wdi_archive(path, lock, years=YEARS)
+
+
+def test_ds57_archive_marks_known_historical_aggregate_without_metadata(
+    tmp_path: Path,
+) -> None:
+    indicator = "EN.ATM.METH.KT.CE"
+    members = _canonical_ds57_members(indicator)
+    members = _replace_ds57_member(
+        members,
+        "API_",
+        lambda text: text + text.splitlines()[5].replace("CHN", "EEC") + "\n",
+    )
+    path = tmp_path / "archive.zip"
+    _write_ds57_zip(path, indicator, members=members)
+    lock = _lock(
+        content=path.read_bytes(),
+        source_family="wdi_archive_ds57",
+        source_id="57",
+        indicator=indicator,
+    )
+
+    frame = read_wdi_archive(path, lock, years=YEARS)
+
+    aggregate = frame.query("iso3 == 'EEC'")
+    assert not aggregate.empty
+    assert not aggregate["country_metadata_member"].any()
+    summary = validate_source(lock, path, years=YEARS)
+    assert summary["archive_only_country_code_count"] == 1
+    assert "archive_only_country_codes" not in summary
+
+
 def test_paths_keep_restricted_inputs_out_of_snapshots_and_public_release(
     tmp_path: Path,
 ) -> None:
     sources = load_sources()
-    restricted = resolve_source_path(
-        sources.whr, repository_root=tmp_path, raw_dir=tmp_path / "raw"
-    )
+    restricted = resolve_source_path(sources.whr, repository_root=tmp_path)
     public = resolve_source_path(
         sources.lock("wdi_population"),
         repository_root=tmp_path,
         raw_dir=tmp_path / "raw",
     )
 
-    assert restricted == tmp_path / "raw" / sources.whr.relative_path.name
+    assert restricted == (
+        tmp_path / "data/raw/external" / sources.whr.relative_path.name
+    )
     assert public == tmp_path / "data/snapshots/wdi/SP.POP.TOTL.json"
     with pytest.raises(ConfigError, match="non-public"):
         validate_staged_path(load_disclosure(), sources.whr.relative_path)
+
+
+def test_restricted_path_accepts_destination_outside_repository(tmp_path: Path) -> None:
+    outside = tmp_path.parent / f"{tmp_path.name}-restricted"
+    path = resolve_source_path(
+        load_sources().whr, repository_root=tmp_path, raw_dir=outside
+    )
+
+    assert path == outside / "whr_2022_data_for_table_2_1.xls"
+
+
+@pytest.mark.parametrize(
+    "relative_raw",
+    [
+        "data/snapshots/not-ignored",
+        "data/derived/public/raw",
+        "other/raw",
+        "data/raw/external/../../snapshots/not-ignored",
+    ],
+)
+def test_restricted_path_rejects_nonignored_in_repo_destination(
+    tmp_path: Path, relative_raw: str
+) -> None:
+    with pytest.raises(SourceAcquisitionError, match="restricted destination"):
+        resolve_source_path(
+            load_sources().whr,
+            repository_root=tmp_path,
+            raw_dir=tmp_path / relative_raw,
+        )
+
+
+def test_restricted_path_rejects_symlink_into_nonignored_repo_path(
+    tmp_path: Path,
+) -> None:
+    snapshots = tmp_path / "data/snapshots/not-ignored"
+    snapshots.mkdir(parents=True)
+    outside_alias = tmp_path.parent / f"{tmp_path.name}-alias"
+    outside_alias.symlink_to(snapshots, target_is_directory=True)
+
+    with pytest.raises(SourceAcquisitionError, match="restricted destination"):
+        resolve_source_path(
+            load_sources().whr,
+            repository_root=tmp_path,
+            raw_dir=outside_alias,
+        )
+
+
+def test_restricted_path_rejects_existing_file_symlink_out_of_ignored_root(
+    tmp_path: Path,
+) -> None:
+    raw = tmp_path / "data/raw/external"
+    raw.mkdir(parents=True)
+    leaked = tmp_path / "data/snapshots/leaked.xls"
+    leaked.parent.mkdir(parents=True)
+    destination = raw / "whr_2022_data_for_table_2_1.xls"
+    destination.symlink_to(leaked)
+
+    with pytest.raises(SourceAcquisitionError, match="restricted destination"):
+        resolve_source_path(load_sources().whr, repository_root=tmp_path, raw_dir=raw)
+
+
+def test_cli_rejects_nonignored_restricted_raw_directory() -> None:
+    rejected_raw_dir = "data/snapshots/not-ignored-cli-test"
+    result = subprocess.run(
+        [
+            sys.executable,
+            "-m",
+            "erhni.sources",
+            "acquire",
+            "--config",
+            "config/sources.toml",
+            "--raw-dir",
+            rejected_raw_dir,
+        ],
+        cwd=REPOSITORY_ROOT,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+
+    assert result.returncode != 0
+    assert "restricted destination" in result.stderr
+    assert not (REPOSITORY_ROOT / rejected_raw_dir).exists()
 
 
 def test_manifest_is_stable_sorted_config_dated_and_machine_path_free(

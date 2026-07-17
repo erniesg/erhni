@@ -6,6 +6,7 @@ import argparse
 import csv
 from io import StringIO
 import json
+import math
 import os
 from pathlib import Path
 import re
@@ -23,6 +24,29 @@ from erhni.hashing import sha256_file
 YEARS = (2016, 2017, 2018)
 ISO3_RE = re.compile(r"^[A-Z]{3}$")
 WDI_CURRENT_FAMILIES = frozenset({"wdi_current", "edgar_ar5_excl_lulucf"})
+DS57_OBSERVATION_COLUMNS = (
+    "Country Name",
+    "Country Code",
+    "Indicator Name",
+    "Indicator Code",
+    *(str(year) for year in range(1960, 2026)),
+)
+DS57_INDICATOR_COLUMNS = (
+    "INDICATOR_CODE",
+    "INDICATOR_NAME",
+    "SOURCE_NOTE",
+    "SOURCE_ORGANIZATION",
+)
+DS57_COUNTRY_COLUMNS = (
+    "Country Code",
+    "Region",
+    "IncomeGroup",
+    "SpecialNotes",
+    "TableName",
+)
+DS57_ARCHIVE_ONLY_CODES = frozenset(
+    {"CNI", "EEC", "ISD", "LIO", "LIX", "LSA", "OEC", "SXN", "YMD"}
+)
 Downloader = Callable[[str], bytes]
 
 
@@ -105,12 +129,44 @@ def acquire_one(
     lock: SourceLock,
     repository_root: str | Path,
     *,
+    raw_dir: str | Path | None = None,
     downloader: Downloader = _default_downloader,
 ) -> Path:
     """Acquire one lock beneath a root, replacing its destination only on a hash match."""
 
     root = Path(repository_root)
-    return _acquire_to(lock, root / lock.relative_path, downloader)
+    destination = (
+        root / lock.relative_path
+        if lock.redistributable
+        else resolve_source_path(
+            lock,
+            repository_root=root,
+            raw_dir=raw_dir or root / "data/raw/external",
+        )
+    )
+    return _acquire_to(lock, destination, downloader)
+
+
+def _restricted_destination(lock: SourceLock, root: Path, raw_dir: str | Path) -> Path:
+    raw = Path(raw_dir)
+    if not raw.is_absolute():
+        raw = root / raw
+    raw = raw.resolve()
+    destination = (raw / lock.relative_path.name).resolve()
+    canonical = root / "data/raw/external"
+    canonical_resolved = canonical.resolve()
+
+    if destination.is_relative_to(root):
+        safe_in_repo = (
+            canonical_resolved == canonical
+            and raw == canonical
+            and destination.parent == canonical
+        )
+        if not safe_in_repo:
+            raise SourceAcquisitionError(
+                f"restricted destination is not the ignored repository raw root: {destination}"
+            )
+    return destination
 
 
 def resolve_source_path(
@@ -124,10 +180,7 @@ def resolve_source_path(
     root = Path(repository_root).resolve()
     if lock.redistributable:
         return root / lock.relative_path
-    raw = Path(raw_dir)
-    if not raw.is_absolute():
-        raw = root / raw
-    return raw.resolve() / lock.relative_path.name
+    return _restricted_destination(lock, root, raw_dir)
 
 
 def _require_columns(frame: pd.DataFrame, required: Iterable[str], label: str) -> None:
@@ -138,7 +191,9 @@ def _require_columns(frame: pd.DataFrame, required: Iterable[str], label: str) -
         )
 
 
-def _read_tabular(path: Path, *, whr: bool = False) -> pd.DataFrame:
+def _read_tabular(
+    path: Path, *, whr: bool = False, preserve_tokens: bool = False
+) -> pd.DataFrame:
     try:
         if path.suffix.lower() == ".xls":
             if not whr:
@@ -147,6 +202,13 @@ def _read_tabular(path: Path, *, whr: bool = False) -> pd.DataFrame:
             if "Sheet1" not in workbook.sheet_names:
                 raise SourceSchemaError("WHR annual workbook must contain Sheet1")
             return pd.read_excel(workbook, sheet_name="Sheet1")
+        if preserve_tokens:
+            return pd.read_csv(
+                path,
+                dtype=str,
+                keep_default_na=False,
+                na_filter=False,
+            )
         return pd.read_csv(path)
     except SourceError:
         raise
@@ -181,7 +243,7 @@ def read_whr_annual(path: str | Path, *, years: Sequence[int] = YEARS) -> pd.Dat
 def read_aqli(path: str | Path, *, years: Sequence[int] = YEARS) -> pd.DataFrame:
     """Read direct AQLI WHO-benchmark fields, retaining zeros and excluding blanks."""
 
-    frame = _read_tabular(Path(path))
+    frame = _read_tabular(Path(path), preserve_tokens=True)
     year_columns = [f"who{year}" for year in years]
     required = ["id", "whostandard", *year_columns]
     _require_columns(frame, required, "AQLI country data")
@@ -196,10 +258,13 @@ def read_aqli(path: str | Path, *, years: Sequence[int] = YEARS) -> pd.DataFrame
         raise SourceSchemaError("AQLI whostandard must equal 5 for every row")
     for column in year_columns:
         original = selected[column]
-        numeric = pd.to_numeric(original, errors="coerce")
-        invalid = original.notna() & numeric.isna()
+        blank = original.astype(str).str.strip().eq("")
+        numeric = pd.to_numeric(original.mask(blank), errors="coerce")
+        invalid = ~blank & numeric.isna()
         if invalid.any():
             raise SourceSchemaError(f"AQLI {column} contains nonnumeric values")
+        if not numeric.dropna().map(math.isfinite).all():
+            raise SourceSchemaError(f"AQLI {column} contains non-finite values")
         if (numeric.dropna() < 0).any():
             raise SourceSchemaError(f"AQLI {column} contains negative values")
         selected[column] = numeric
@@ -333,17 +398,42 @@ def read_wdi_metadata(path: str | Path, lock: SourceLock) -> dict[str, object]:
         "unit": lock.unit,
     }
     if lock.source_family == "edgar_ar5_excl_lulucf":
-        semantics = f"{name} {note}".lower()
-        if "mt co2e" not in semantics:
+        name_semantics = name.lower()
+        note_semantics = note.lower()
+        if "mt co2e" not in name_semantics:
             raise SourceSchemaError("successor GHG metadata must state Mt CO2e")
-        if "ar5" not in semantics:
+        if "ar5" not in note_semantics:
             raise SourceSchemaError("successor GHG metadata must state AR5")
-        if "exclud" not in semantics or "lulucf" not in semantics:
-            raise SourceSchemaError("successor GHG metadata must exclude LULUCF")
-        if "carbon dioxide equivalent" not in semantics:
+        contradictory_standardization = re.search(
+            r"\bnot\s+standardized\s+to\s+carbon dioxide equivalent values\b",
+            note_semantics,
+        )
+        affirmative_standardization = re.search(
+            r"\bstandardized\s+to\s+carbon dioxide equivalent values\b",
+            note_semantics,
+        )
+        if contradictory_standardization is not None:
             raise SourceSchemaError(
-                "successor GHG metadata must state CO2-equivalent values"
+                "successor GHG metadata contradicts CO2-equivalent standardization"
             )
+        if affirmative_standardization is None:
+            raise SourceSchemaError(
+                "successor GHG metadata must state CO2-equivalent standardization"
+            )
+        contradiction = re.search(
+            r"\b(?:does\s+not\s+exclude|not\s+excluding)\b[^.]*\blulucf\b",
+            note_semantics,
+        )
+        affirmative_exclusion = re.search(
+            r"\b(?:excludes|excluding)\b[^.]{0,200}\blulucf\b",
+            note_semantics,
+        )
+        if contradiction is not None:
+            raise SourceSchemaError(
+                "successor GHG metadata contradicts the required exclude LULUCF boundary"
+            )
+        if affirmative_exclusion is None:
+            raise SourceSchemaError("successor GHG metadata must exclude LULUCF")
         summary.update(
             {
                 "unit": "Mt CO2e",
@@ -397,12 +487,67 @@ def _csv_rows(
         )
     except StopIteration as error:
         raise SourceSchemaError(
-            f"DS57 member missing {header_prefix} header"
+            f"DS57 member schema is missing the expected {header_prefix} header"
         ) from error
     reader = csv.DictReader(StringIO("\n".join(lines[header_index:])))
     if reader.fieldnames is None:
         raise SourceSchemaError("DS57 member has no CSV header")
-    return reader.fieldnames, list(reader)
+    fields = list(reader.fieldnames)
+    trailing_empty_column = bool(fields and fields[-1] == "")
+    if trailing_empty_column:
+        fields.pop()
+    rows = list(reader)
+    for row in rows:
+        if None in row:
+            raise SourceSchemaError("DS57 member row exceeds its declared schema")
+        if trailing_empty_column:
+            if str(row.get("", "")).strip():
+                raise SourceSchemaError(
+                    "DS57 member has a nonempty trailing schema column"
+                )
+            row.pop("", None)
+    return fields, rows
+
+
+def _ds57_member_roles(names: list[str], indicator: str) -> dict[str, str]:
+    escaped_indicator = re.escape(indicator)
+    patterns = {
+        "observations": re.compile(
+            rf"^API_{escaped_indicator}_DS57_en_csv_v2_(\d+)\.csv$"
+        ),
+        "indicator": re.compile(
+            rf"^Metadata_Indicator_API_{escaped_indicator}_DS57_en_csv_v2_(\d+)\.csv$"
+        ),
+        "country": re.compile(
+            rf"^Metadata_Country_API_{escaped_indicator}_DS57_en_csv_v2_(\d+)\.csv$"
+        ),
+    }
+    roles: dict[str, str] = {}
+    revisions: set[str] = set()
+    for role, pattern in patterns.items():
+        matches = [(name, pattern.fullmatch(name)) for name in names]
+        matches = [(name, match) for name, match in matches if match is not None]
+        if len(matches) != 1:
+            raise SourceSchemaError(
+                f"DS57 ZIP must contain exactly one canonical {role} member"
+            )
+        name, match = matches[0]
+        roles[role] = name
+        revisions.add(match.group(1))
+    if len(set(roles.values())) != 3 or len(revisions) != 1:
+        raise SourceSchemaError(
+            "DS57 ZIP members must use one consistent source-57 revision"
+        )
+    if set(roles.values()) != set(names):
+        raise SourceSchemaError("DS57 ZIP contains an unexpected member")
+    return roles
+
+
+def _require_exact_ds57_columns(
+    fields: list[str], expected: tuple[str, ...], label: str
+) -> None:
+    if tuple(fields) != expected:
+        raise SourceSchemaError(f"DS57 {label} has unexpected schema columns")
 
 
 def read_wdi_archive(
@@ -415,74 +560,89 @@ def read_wdi_archive(
     indicator = lock.expected_indicator
     if indicator is None:
         raise SourceSchemaError("DS57 lock requires an indicator")
+    expected_lock_path = f"data/snapshots/wdi_archive/{indicator}.zip"
+    if lock.relative_path.as_posix() != expected_lock_path:
+        raise SourceFamilyError(
+            "DS57 lock path must identify the configured archive indicator family"
+        )
     try:
         with ZipFile(path) as archive:
             names = archive.namelist()
             if len(names) != 3 or len(set(names)) != 3:
                 raise SourceSchemaError("DS57 ZIP must contain exactly three members")
-            if any(
-                "DS57" not in name or indicator not in name or not name.endswith(".csv")
-                for name in names
-            ):
-                raise SourceSchemaError("DS57 ZIP contains an unexpected member")
-            observations = [name for name in names if name.startswith("API_")]
-            indicator_meta = [
-                name for name in names if name.startswith("Metadata_Indicator_")
-            ]
-            country_meta = [
-                name for name in names if name.startswith("Metadata_Country_")
-            ]
-            if not all(
-                len(group) == 1
-                for group in (observations, indicator_meta, country_meta)
-            ):
-                raise SourceSchemaError(
-                    "DS57 ZIP member roles are incomplete or ambiguous"
-                )
-            observation_text = _decode_member(archive, observations[0])
-            indicator_text = _decode_member(archive, indicator_meta[0])
-            country_text = _decode_member(archive, country_meta[0])
+            roles = _ds57_member_roles(names, indicator)
+            observation_text = _decode_member(archive, roles["observations"])
+            indicator_text = _decode_member(archive, roles["indicator"])
+            country_text = _decode_member(archive, roles["country"])
     except SourceError:
         raise
     except (OSError, BadZipFile) as error:
         raise SourceSchemaError("source is not a valid DS57 ZIP") from error
 
-    if "WDI Database Archives" not in observation_text:
+    if (
+        re.search(
+            r'(?m)^"?Data Source"?,"?WDI Database Archives"?,?\r?$', observation_text
+        )
+        is None
+    ):
         raise SourceSchemaError("DS57 observation member has unexpected data source")
     fields, rows = _csv_rows(observation_text, header_prefix="Country Name")
-    required = {
-        "Country Name",
-        "Country Code",
-        "Indicator Name",
-        "Indicator Code",
-        *map(str, years),
-    }
-    missing = sorted(required - set(fields))
-    if missing:
-        raise SourceSchemaError(
-            f"DS57 observation member missing columns: {', '.join(missing)}"
-        )
+    _require_exact_ds57_columns(fields, DS57_OBSERVATION_COLUMNS, "observation member")
     indicator_fields, indicator_rows = _csv_rows(
         indicator_text, header_prefix="INDICATOR_CODE"
     )
-    if "INDICATOR_CODE" not in indicator_fields or len(indicator_rows) != 1:
-        raise SourceSchemaError("DS57 indicator metadata has an unexpected schema")
-    if indicator_rows[0].get("INDICATOR_CODE") != indicator:
+    _require_exact_ds57_columns(
+        indicator_fields, DS57_INDICATOR_COLUMNS, "indicator metadata"
+    )
+    if len(indicator_rows) != 1:
+        raise SourceSchemaError(
+            "DS57 indicator metadata must contain one indicator row"
+        )
+    indicator_row = indicator_rows[0]
+    if any(not str(indicator_row.get(field, "")).strip() for field in indicator_fields):
+        raise SourceSchemaError("DS57 indicator metadata fields must be nonblank")
+    if indicator_row["INDICATOR_CODE"] != indicator:
         raise SourceSchemaError("DS57 indicator metadata has an unexpected indicator")
     country_fields, country_rows = _csv_rows(country_text, header_prefix="Country Code")
-    if "Country Code" not in country_fields or not country_rows:
-        raise SourceSchemaError("DS57 country metadata has an unexpected schema")
+    _require_exact_ds57_columns(
+        country_fields, DS57_COUNTRY_COLUMNS, "country metadata"
+    )
+    if not country_rows:
+        raise SourceSchemaError("DS57 country metadata has no rows")
+    country_codes: list[str] = []
+    for row in country_rows:
+        code = str(row.get("Country Code", "")).strip()
+        if not ISO3_RE.fullmatch(code):
+            raise SourceSchemaError(
+                "DS57 country metadata requires valid nonblank country codes"
+            )
+        country_codes.append(code)
+    if len(country_codes) != len(set(country_codes)):
+        raise SourceSchemaError(
+            "DS57 country metadata contains duplicate country codes"
+        )
+    country_code_set = set(country_codes)
+
     normalized = []
     raw_ids: list[str] = []
     for row in rows:
-        iso3 = row.get("Country Code", "")
+        iso3 = str(row.get("Country Code", "")).strip()
         if not ISO3_RE.fullmatch(iso3):
             raise SourceSchemaError("DS57 observation has invalid ISO3 code")
         raw_ids.append(iso3)
         if row.get("Indicator Code") != indicator:
             raise SourceSchemaError("DS57 observation has an unexpected indicator")
+        if (
+            str(row.get("Indicator Name", "")).strip()
+            != indicator_row["INDICATOR_NAME"]
+        ):
+            raise SourceSchemaError(
+                "DS57 observation and indicator metadata names are inconsistent"
+            )
+        if not str(row.get("Country Name", "")).strip():
+            raise SourceSchemaError("DS57 observation country name must be nonblank")
         for year in years:
-            raw_value = row.get(str(year), "").strip()
+            raw_value = str(row.get(str(year), "")).strip()
             if not raw_value:
                 continue
             try:
@@ -500,10 +660,24 @@ def read_wdi_archive(
                     "value": value,
                     "unit": lock.unit,
                     "source_id": "57",
+                    "country_metadata_member": iso3 in country_code_set,
                 }
             )
-    if "WLD" not in raw_ids:
+    raw_id_set = set(raw_ids)
+    if "WLD" not in raw_id_set:
         raise SourceSchemaError("DS57 observation does not contain WLD")
+    unknown_observation_codes = raw_id_set - country_code_set - DS57_ARCHIVE_ONLY_CODES
+    if unknown_observation_codes:
+        raise SourceSchemaError(
+            "DS57 observation country metadata membership is inconsistent: "
+            + ", ".join(sorted(unknown_observation_codes))
+        )
+    missing_observation_codes = country_code_set - raw_id_set
+    if missing_observation_codes:
+        raise SourceSchemaError(
+            "DS57 country metadata includes codes absent from observations: "
+            + ", ".join(sorted(missing_observation_codes))
+        )
     frame = pd.DataFrame.from_records(
         normalized,
         columns=[
@@ -514,11 +688,13 @@ def read_wdi_archive(
             "value",
             "unit",
             "source_id",
+            "country_metadata_member",
         ],
     )
     if frame.duplicated(["iso3", "year"]).any():
         raise SourceSchemaError("DS57 observation contains duplicate ISO3-year rows")
     frame.attrs["members"] = sorted(names)
+    frame.attrs["archive_only_country_codes"] = sorted(raw_id_set - country_code_set)
     release_match = re.search(r'Last Updated Date"?,"?([^"\r\n,]+)', observation_text)
     if release_match is None:
         raise SourceSchemaError("DS57 observation member has no release date")
@@ -558,6 +734,9 @@ def validate_source(
             "columns": list(frame.columns),
             "source_id": "57",
             "members": frame.attrs["members"],
+            "archive_only_country_code_count": len(
+                frame.attrs["archive_only_country_codes"]
+            ),
             "release": frame.attrs["release"],
         }
     if lock.source_family in WDI_CURRENT_FAMILIES:

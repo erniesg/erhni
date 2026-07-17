@@ -41,6 +41,7 @@
       "retrieval_url": "https://api.worldbank.org/v2/en/indicator/EN.ATM.METH.KT.CE?downloadformat=csv",
       "rights": "redistributable official snapshot",
       "schema": {
+        "archive_only_country_code_count": 9,
         "columns": [
           "country_name",
           "iso3",
@@ -48,7 +49,8 @@
           "indicator",
           "value",
           "unit",
-          "source_id"
+          "source_id",
+          "country_metadata_member"
         ],
         "members": [
           "API_EN.ATM.METH.KT.CE_DS57_en_csv_v2_58462.csv",
@@ -74,6 +76,7 @@
       "retrieval_url": "https://api.worldbank.org/v2/en/indicator/EN.ATM.NOXE.KT.CE?downloadformat=csv",
       "rights": "redistributable official snapshot",
       "schema": {
+        "archive_only_country_code_count": 9,
         "columns": [
           "country_name",
           "iso3",
@@ -81,7 +84,8 @@
           "indicator",
           "value",
           "unit",
-          "source_id"
+          "source_id",
+          "country_metadata_member"
         ],
         "members": [
           "API_EN.ATM.NOXE.KT.CE_DS57_en_csv_v2_58463.csv",
@@ -107,6 +111,7 @@
       "retrieval_url": "https://api.worldbank.org/v2/en/indicator/EN.ATM.GHGT.KT.CE?downloadformat=csv",
       "rights": "redistributable official snapshot",
       "schema": {
+        "archive_only_country_code_count": 9,
         "columns": [
           "country_name",
           "iso3",
@@ -114,7 +119,8 @@
           "indicator",
           "value",
           "unit",
-          "source_id"
+          "source_id",
+          "country_metadata_member"
         ],
         "members": [
           "API_EN.ATM.GHGT.KT.CE_DS57_en_csv_v2_57533.csv",
