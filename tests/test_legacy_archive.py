@@ -67,6 +67,9 @@ def test_legacy_archive_is_an_exact_byte_preserving_copy_of_the_base_tree() -> N
         ".pytest_cache/blocked",
         "data/derived/restricted/blocked.csv",
         "outputs/generated.csv",
+        "archive/legacy-2022/review-output.csv",
+        "archive/legacy-2022/notes/review-output.csv",
+        "archive/legacy-2022/original/unlisted.csv",
     ],
 )
 def test_check_staged_rejects_non_source_paths(staged_path: str, tmp_path: Path) -> None:
@@ -98,7 +101,7 @@ def test_check_staged_rejects_non_source_paths(staged_path: str, tmp_path: Path)
     assert staged_path in result.stderr
 
 
-def test_check_staged_accepts_a_classified_task_file(tmp_path: Path) -> None:
+def test_check_staged_accepts_only_the_exact_archive_inventory(tmp_path: Path) -> None:
     if not SCRIPT.exists():
         pytest.skip("archive validator is not implemented yet")
 
@@ -113,13 +116,21 @@ def test_check_staged_accepts_a_classified_task_file(tmp_path: Path) -> None:
         check=True,
         capture_output=True,
     ).stdout.strip()
-    git(
-        "update-index",
-        "--add",
-        "--cacheinfo",
-        f"100644,{blob},scripts/archive_legacy.py",
-        env=env,
-    )
+    allowed_paths = [
+        "scripts/archive_legacy.py",
+        "archive/legacy-2022/README.md",
+        "archive/legacy-2022/original-paths.txt",
+        "archive/legacy-2022/sha256.txt",
+        *(f"archive/legacy-2022/original/{path}" for path in read_paths()),
+    ]
+    for path in allowed_paths:
+        git(
+            "update-index",
+            "--add",
+            "--cacheinfo",
+            f"100644,{blob},{path}",
+            env=env,
+        )
 
     result = subprocess.run(
         [sys.executable, str(SCRIPT), "--check-staged"],

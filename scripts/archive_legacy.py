@@ -100,6 +100,14 @@ and must not be used as inputs to the reproducible pipeline.
 `original-paths.txt` fixes the complete source path set; `sha256.txt` records
 the SHA-256 digest of every archived byte sequence.
 """
+ALLOWED_ARCHIVE_PATHS = frozenset(
+    {
+        "archive/legacy-2022/README.md",
+        "archive/legacy-2022/original-paths.txt",
+        "archive/legacy-2022/sha256.txt",
+    }
+    | {f"archive/legacy-2022/original/{path}" for path in LEGACY_PATHS}
+)
 
 
 def run_git(*args: str, text: bool = True) -> subprocess.CompletedProcess:
@@ -184,7 +192,7 @@ def staged_reason(path: str) -> str | None:
         ("data/raw/external/", "data/derived/restricted/", "outputs/restricted/", "outputs/review/")
     ):
         return "ignored restricted path"
-    if path in ALLOWED_STAGED_FILES or path.startswith("archive/legacy-2022/"):
+    if path in ALLOWED_STAGED_FILES or path in ALLOWED_ARCHIVE_PATHS:
         return None
     return "unclassified generated path"
 
