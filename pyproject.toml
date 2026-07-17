@@ -1,0 +1,11 @@
+[project]
+name = "erhni"
+version = "0.1.0"
+description = "Reproducible Environmental Responsible Happy Nation Index analysis"
+requires-python = ">=3.12,<3.13"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "pytest>=8,<9",
+]
