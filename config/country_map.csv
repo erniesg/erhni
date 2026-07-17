@@ -1,0 +1,719 @@
+source,source_name,canonical_iso3,display_name,status,reason
+whr,Afghanistan,AFG,Afghanistan,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Albania,ALB,Albania,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Algeria,DZA,Algeria,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Angola,AGO,Angola,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Argentina,ARG,Argentina,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Armenia,ARM,Armenia,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Australia,AUS,Australia,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Austria,AUT,Austria,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Azerbaijan,AZE,Azerbaijan,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Bahrain,BHR,Bahrain,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Bangladesh,BGD,Bangladesh,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Belarus,BLR,Belarus,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Belgium,BEL,Belgium,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Belize,BLZ,Belize,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Benin,BEN,Benin,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Bhutan,BTN,Bhutan,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Bolivia,BOL,Bolivia,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Bosnia and Herzegovina,BIH,Bosnia and Herzegovina,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Botswana,BWA,Botswana,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Brazil,BRA,Brazil,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Bulgaria,BGR,Bulgaria,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Burkina Faso,BFA,Burkina Faso,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Burundi,BDI,Burundi,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Cambodia,KHM,Cambodia,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Cameroon,CMR,Cameroon,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Canada,CAN,Canada,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Central African Republic,CAF,Central African Republic,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Chad,TCD,Chad,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Chile,CHL,Chile,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,China,CHN,China,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Colombia,COL,Colombia,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Comoros,COM,Comoros,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Congo (Brazzaville),COG,Republic of the Congo,include,Explicit WHR alias Congo (Brazzaville) -> COG; reviewed without runtime name matching.
+whr,Congo (Kinshasa),COD,Democratic Republic of the Congo,include,Explicit WHR alias Congo (Kinshasa) -> COD; reviewed without runtime name matching.
+whr,Costa Rica,CRI,Costa Rica,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Croatia,HRV,Croatia,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Cuba,CUB,Cuba,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Cyprus,CYP,Cyprus,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Czechia,CZE,Czechia,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Denmark,DNK,Denmark,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Djibouti,DJI,Djibouti,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Dominican Republic,DOM,Dominican Republic,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Ecuador,ECU,Ecuador,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Egypt,EGY,"Egypt, Arab Rep.",include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,El Salvador,SLV,El Salvador,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Estonia,EST,Estonia,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Eswatini,SWZ,Eswatini,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Ethiopia,ETH,Ethiopia,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Finland,FIN,Finland,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,France,FRA,France,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Gabon,GAB,Gabon,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Gambia,GMB,"Gambia, The",include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Georgia,GEO,Georgia,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Germany,DEU,Germany,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Ghana,GHA,Ghana,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Greece,GRC,Greece,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Guatemala,GTM,Guatemala,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Guinea,GIN,Guinea,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Guyana,GUY,Guyana,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Haiti,HTI,Haiti,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Honduras,HND,Honduras,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Hong Kong S.A.R. of China,HKG,"Hong Kong SAR, China",include,Explicit WHR alias Hong Kong S.A.R. of China -> HKG; reviewed without runtime name matching.
+whr,Hungary,HUN,Hungary,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Iceland,ISL,Iceland,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,India,IND,India,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Indonesia,IDN,Indonesia,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Iran,IRN,"Iran, Islamic Rep.",include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Iraq,IRQ,Iraq,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Ireland,IRL,Ireland,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Israel,ISR,Israel,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Italy,ITA,Italy,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Ivory Coast,CIV,Côte d'Ivoire,include,Explicit WHR alias Ivory Coast -> CIV; reviewed without runtime name matching.
+whr,Jamaica,JAM,Jamaica,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Japan,JPN,Japan,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Jordan,JOR,Jordan,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Kazakhstan,KAZ,Kazakhstan,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Kenya,KEN,Kenya,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Kosovo,XKX,Kosovo,include,Explicit WHR name alias to separately reported XKX identity; no runtime name matching.
+whr,Kuwait,KWT,Kuwait,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Kyrgyzstan,KGZ,Kyrgyz Republic,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Laos,LAO,Lao PDR,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Latvia,LVA,Latvia,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Lebanon,LBN,Lebanon,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Lesotho,LSO,Lesotho,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Liberia,LBR,Liberia,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Libya,LBY,Libya,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Lithuania,LTU,Lithuania,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Luxembourg,LUX,Luxembourg,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Madagascar,MDG,Madagascar,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Malawi,MWI,Malawi,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Malaysia,MYS,Malaysia,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Maldives,MDV,Maldives,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Mali,MLI,Mali,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Malta,MLT,Malta,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Mauritania,MRT,Mauritania,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Mauritius,MUS,Mauritius,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Mexico,MEX,Mexico,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Moldova,MDA,Moldova,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Mongolia,MNG,Mongolia,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Montenegro,MNE,Montenegro,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Morocco,MAR,Morocco,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Mozambique,MOZ,Mozambique,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Myanmar,MMR,Myanmar,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Namibia,NAM,Namibia,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Nepal,NPL,Nepal,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Netherlands,NLD,Netherlands,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,New Zealand,NZL,New Zealand,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Nicaragua,NIC,Nicaragua,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Niger,NER,Niger,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Nigeria,NGA,Nigeria,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,North Cyprus,,North Cyprus,exclude,Separately reported territory has no canonical sovereign ISO3; explicitly excluded without reassignment.
+whr,North Macedonia,MKD,North Macedonia,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Norway,NOR,Norway,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Oman,OMN,Oman,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Pakistan,PAK,Pakistan,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Palestinian Territories,PSE,West Bank and Gaza,include,Explicit WHR alias Palestinian Territories -> PSE; reviewed without runtime name matching.
+whr,Panama,PAN,Panama,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Paraguay,PRY,Paraguay,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Peru,PER,Peru,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Philippines,PHL,Philippines,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Poland,POL,Poland,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Portugal,PRT,Portugal,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Qatar,QAT,Qatar,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Romania,ROU,Romania,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Russia,RUS,Russian Federation,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Rwanda,RWA,Rwanda,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Saudi Arabia,SAU,Saudi Arabia,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Senegal,SEN,Senegal,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Serbia,SRB,Serbia,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Sierra Leone,SLE,Sierra Leone,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Singapore,SGP,Singapore,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Slovakia,SVK,Slovak Republic,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Slovenia,SVN,Slovenia,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Somalia,SOM,"Somalia, Fed. Rep.",include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Somaliland region,,Somaliland region,exclude,Separately reported region has no canonical sovereign ISO3; explicitly excluded without reassignment.
+whr,South Africa,ZAF,South Africa,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,South Korea,KOR,"Korea, Rep.",include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,South Sudan,SSD,South Sudan,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Spain,ESP,Spain,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Sri Lanka,LKA,Sri Lanka,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Sudan,SDN,Sudan,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Suriname,SUR,Suriname,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Sweden,SWE,Sweden,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Switzerland,CHE,Switzerland,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Syria,SYR,Syrian Arab Republic,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Taiwan Province of China,TWN,Taiwan,include,Explicitly included as a separately reported source entity; no sovereignty inference.
+whr,Tajikistan,TJK,Tajikistan,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Tanzania,TZA,Tanzania,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Thailand,THA,Thailand,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Togo,TGO,Togo,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Trinidad and Tobago,TTO,Trinidad and Tobago,include,Explicit WHR alias Trinidad and Tobago -> TTO; reviewed without runtime name matching.
+whr,Tunisia,TUN,Tunisia,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Turkey,TUR,Türkiye,include,Explicit WHR alias Turkey -> TUR; reviewed without runtime name matching.
+whr,Turkmenistan,TKM,Turkmenistan,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Uganda,UGA,Uganda,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Ukraine,UKR,Ukraine,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,United Arab Emirates,ARE,United Arab Emirates,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,United Kingdom,GBR,United Kingdom,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,United States,USA,United States,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Uruguay,URY,Uruguay,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Uzbekistan,UZB,Uzbekistan,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Venezuela,VEN,"Venezuela, RB",include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Vietnam,VNM,Vietnam,include,Explicit WHR alias Vietnam -> VNM; reviewed without runtime name matching.
+whr,Yemen,YEM,"Yemen, Rep.",include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Zambia,ZMB,Zambia,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+whr,Zimbabwe,ZWE,Zimbabwe,include,Explicit reviewed WHR name-to-ISO3 decision; no runtime name matching.
+aqli,ABW,ABW,Aruba,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,AFG,AFG,Afghanistan,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,AGO,AGO,Angola,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,AIA,AIA,Anguilla,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,ALA,ALA,Åland,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,ALB,ALB,Albania,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,AND,AND,Andorra,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,ARE,ARE,United Arab Emirates,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,ARG,ARG,Argentina,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,ARM,ARM,Armenia,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,ASM,ASM,American Samoa,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,ATF,ATF,French Southern Territories,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,ATG,ATG,Antigua and Barbuda,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,AUS,AUS,Australia,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,AUT,AUT,Austria,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,AZE,AZE,Azerbaijan,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,BDI,BDI,Burundi,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,BEL,BEL,Belgium,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,BEN,BEN,Benin,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,BES,BES,"Bonaire, Sint Eustatius and Saba",include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,BFA,BFA,Burkina Faso,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,BGD,BGD,Bangladesh,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,BGR,BGR,Bulgaria,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,BHR,BHR,Bahrain,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,BHS,BHS,"Bahamas, The",include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,BIH,BIH,Bosnia and Herzegovina,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,BLM,BLM,Saint-Barthélemy,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,BLR,BLR,Belarus,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,BLZ,BLZ,Belize,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,BMU,BMU,Bermuda,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,BOL,BOL,Bolivia,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,BRA,BRA,Brazil,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,BRB,BRB,Barbados,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,BRN,BRN,Brunei Darussalam,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,BTN,BTN,Bhutan,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,BVT,BVT,Bouvet Island,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,BWA,BWA,Botswana,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,CAF,CAF,Central African Republic,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,CAN,CAN,Canada,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,CCK,CCK,Cocos Islands,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,CHE,CHE,Switzerland,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,CHL,CHL,Chile,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,CHN,CHN,China,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,CIV,CIV,Côte d'Ivoire,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,CMR,CMR,Cameroon,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,COD,COD,Democratic Republic of the Congo,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,COG,COG,Republic of the Congo,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,COK,COK,Cook Islands,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,COL,COL,Colombia,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,COM,COM,Comoros,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,CPV,CPV,Cabo Verde,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,CRI,CRI,Costa Rica,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,CUB,CUB,Cuba,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,CUW,CUW,Curacao,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,CXR,CXR,Christmas Island,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,CYM,CYM,Cayman Islands,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,CYP,CYP,Cyprus,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,CZE,CZE,Czechia,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,DEU,DEU,Germany,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,DJI,DJI,Djibouti,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,DMA,DMA,Dominica,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,DNK,DNK,Denmark,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,DOM,DOM,Dominican Republic,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,DZA,DZA,Algeria,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,ECU,ECU,Ecuador,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,EGY,EGY,"Egypt, Arab Rep.",include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,ERI,ERI,Eritrea,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,ESH,ESH,Western Sahara,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,ESP,ESP,Spain,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,EST,EST,Estonia,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,ETH,ETH,Ethiopia,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,FIN,FIN,Finland,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,FJI,FJI,Fiji,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,FLK,FLK,Falkland Islands,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,FRA,FRA,France,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,FRO,FRO,Faroe Islands,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,FSM,FSM,"Micronesia, Fed. Sts.",include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,GAB,GAB,Gabon,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,GBR,GBR,United Kingdom,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,GEO,GEO,Georgia,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,GGY,GGY,Guernsey,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,GHA,GHA,Ghana,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,GIB,GIB,Gibraltar,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,GIN,GIN,Guinea,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,GLP,GLP,Guadeloupe,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,GMB,GMB,"Gambia, The",include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,GNB,GNB,Guinea-Bissau,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,GNQ,GNQ,Equatorial Guinea,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,GRC,GRC,Greece,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,GRD,GRD,Grenada,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,GRL,GRL,Greenland,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,GTM,GTM,Guatemala,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,GUF,GUF,French Guiana,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,GUM,GUM,Guam,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,GUY,GUY,Guyana,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,HMD,HMD,Heard Island and McDonald Island,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,HND,HND,Honduras,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,HRV,HRV,Croatia,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,HTI,HTI,Haiti,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,HUN,HUN,Hungary,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,IDN,IDN,Indonesia,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,IMN,IMN,Isle of Man,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,IND,IND,India,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,IOT,IOT,British Indian Ocean Territory,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,IRL,IRL,Ireland,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,IRN,IRN,"Iran, Islamic Rep.",include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,IRQ,IRQ,Iraq,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,ISL,ISL,Iceland,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,ISR,ISR,Israel,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,ITA,ITA,Italy,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,JAM,JAM,Jamaica,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,JEY,JEY,Jersey,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,JOR,JOR,Jordan,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,JPN,JPN,Japan,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,KAZ,KAZ,Kazakhstan,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,KEN,KEN,Kenya,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,KGZ,KGZ,Kyrgyz Republic,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,KHM,KHM,Cambodia,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,KIR,KIR,Kiribati,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,KNA,KNA,St. Kitts and Nevis,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,KOR,KOR,"Korea, Rep.",include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,KWT,KWT,Kuwait,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,LAO,LAO,Lao PDR,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,LBN,LBN,Lebanon,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,LBR,LBR,Liberia,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,LBY,LBY,Libya,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,LCA,LCA,St. Lucia,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,LIE,LIE,Liechtenstein,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,LKA,LKA,Sri Lanka,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,LSO,LSO,Lesotho,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,LTU,LTU,Lithuania,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,LUX,LUX,Luxembourg,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,LVA,LVA,Latvia,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,MAF,MAF,St. Martin (French part),include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,MAR,MAR,Morocco,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,MCO,MCO,Monaco,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,MDA,MDA,Moldova,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,MDG,MDG,Madagascar,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,MDV,MDV,Maldives,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,MEX,MEX,Mexico,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,MHL,MHL,Marshall Islands,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,MKD,MKD,North Macedonia,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,MLI,MLI,Mali,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,MLT,MLT,Malta,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,MMR,MMR,Myanmar,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,MNE,MNE,Montenegro,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,MNG,MNG,Mongolia,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,MNP,MNP,Northern Mariana Islands,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,MOZ,MOZ,Mozambique,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,MRT,MRT,Mauritania,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,MSR,MSR,Montserrat,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,MTQ,MTQ,Martinique,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,MUS,MUS,Mauritius,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,MWI,MWI,Malawi,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,MYS,MYS,Malaysia,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,MYT,MYT,Mayotte,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,NAM,NAM,Namibia,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,NCL,NCL,New Caledonia,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,NER,NER,Niger,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,NFK,NFK,Norfolk Island,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,NGA,NGA,Nigeria,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,NIC,NIC,Nicaragua,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,NIU,NIU,Niue,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,NLD,NLD,Netherlands,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,NOR,NOR,Norway,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,NPL,NPL,Nepal,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,NRU,NRU,Naoero,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,NZL,NZL,New Zealand,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,OMN,OMN,Oman,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,PAK,PAK,Pakistan,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,PAN,PAN,Panama,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,PCN,PCN,Pitcairn Islands,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,PER,PER,Peru,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,PHL,PHL,Philippines,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,PLW,PLW,Palau,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,PNG,PNG,Papua New Guinea,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,POL,POL,Poland,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,PRI,PRI,Puerto Rico (US),include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,PRK,PRK,"Korea, Dem. People's Rep.",include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,PRT,PRT,Portugal,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,PRY,PRY,Paraguay,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,PSE,PSE,West Bank and Gaza,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,PYF,PYF,French Polynesia,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,QAT,QAT,Qatar,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,REU,REU,Réunion,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,ROU,ROU,Romania,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,RUS,RUS,Russian Federation,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,RWA,RWA,Rwanda,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,SAU,SAU,Saudi Arabia,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,SDN,SDN,Sudan,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,SEN,SEN,Senegal,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,SGP,SGP,Singapore,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,SGS,SGS,South Georgia and the South Sand,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,SHN,SHN,"Saint Helena, Ascension and Tris",include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,SJM,SJM,Svalbard and Jan Mayen,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,SLB,SLB,Solomon Islands,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,SLE,SLE,Sierra Leone,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,SLV,SLV,El Salvador,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,SMR,SMR,San Marino,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,SOM,SOM,"Somalia, Fed. Rep.",include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,SPM,SPM,Saint Pierre and Miquelon,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,SRB,SRB,Serbia,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,SSD,SSD,South Sudan,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,STP,STP,Sao Tome and Principe,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,SUR,SUR,Suriname,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,SVK,SVK,Slovak Republic,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,SVN,SVN,Slovenia,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,SWE,SWE,Sweden,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,SWZ,SWZ,Eswatini,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,SXM,SXM,Sint Maarten (Dutch part),include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,SYC,SYC,Seychelles,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,SYR,SYR,Syrian Arab Republic,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,TCA,TCA,Turks and Caicos Islands,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,TCD,TCD,Chad,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,TGO,TGO,Togo,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,THA,THA,Thailand,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,TJK,TJK,Tajikistan,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,TKL,TKL,Tokelau,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,TKM,TKM,Turkmenistan,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,TLS,TLS,Timor-Leste,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,TON,TON,Tonga,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,TTO,TTO,Trinidad and Tobago,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,TUN,TUN,Tunisia,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,TUR,TUR,Türkiye,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,TUV,TUV,Tuvalu,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,TWN,TWN,Taiwan,include,Explicitly included as a separately reported source entity; no sovereignty inference.
+aqli,TZA,TZA,Tanzania,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,UGA,UGA,Uganda,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,UKR,UKR,Ukraine,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,UMI,UMI,United States Minor Outlying Islands,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,URY,URY,Uruguay,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,USA,USA,United States,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,UZB,UZB,Uzbekistan,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,VAT,VAT,Vatican City,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,VCT,VCT,St. Vincent and the Grenadines,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,VEN,VEN,"Venezuela, RB",include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,VGB,VGB,British Virgin Islands,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,VIR,VIR,Virgin Islands (U.S.),include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,VNM,VNM,Vietnam,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,VUT,VUT,Vanuatu,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,WLF,WLF,Wallis and Futuna,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,WSM,WSM,Samoa,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,XAD,,Akrotiri and Dhekelia,exclude,Non-ISO separately reported Akrotiri and Dhekelia entity; excluded without sovereign reassignment.
+aqli,XCL,,Clipperton Island,exclude,Non-ISO separately reported Clipperton Island entity; excluded without sovereign reassignment.
+aqli,XKO,XKX,Kosovo,include,Explicit source-code alias XKO -> XKX for separately reported Kosovo identity.
+aqli,XPI,,Paracel Islands,exclude,Non-ISO disputed Paracel Islands entity; excluded without sovereign reassignment.
+aqli,XSP,,Spratly Islands,exclude,Non-ISO disputed Spratly Islands entity; excluded without sovereign reassignment.
+aqli,YEM,YEM,"Yemen, Rep.",include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,ZAF,ZAF,South Africa,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,ZMB,ZMB,Zambia,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+aqli,ZNC,,Northern Cyprus,exclude,Non-ISO separately reported Northern Cyprus entity; excluded without sovereign reassignment.
+aqli,ZWE,ZWE,Zimbabwe,include,Explicit AQLI ISO3 identity decision validated against the reviewed source label.
+wdi,ABW,ABW,Aruba,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,AFE,AFE,Africa Eastern and Southern,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,AFG,AFG,Afghanistan,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,AFR,AFR,Africa,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,AFW,AFW,Africa Western and Central,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,AGO,AGO,Angola,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,ALB,ALB,Albania,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,AND,AND,Andorra,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,ARB,ARB,Arab World,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,ARE,ARE,United Arab Emirates,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,ARG,ARG,Argentina,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,ARM,ARM,Armenia,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,ASM,ASM,American Samoa,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,ATG,ATG,Antigua and Barbuda,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,AUS,AUS,Australia,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,AUT,AUT,Austria,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,AZE,AZE,Azerbaijan,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,BDI,BDI,Burundi,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,BEA,BEA,East Asia & Pacific (IBRD-only countries),aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,BEC,BEC,Europe & Central Asia (IBRD-only countries),aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,BEL,BEL,Belgium,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,BEN,BEN,Benin,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,BFA,BFA,Burkina Faso,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,BGD,BGD,Bangladesh,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,BGR,BGR,Bulgaria,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,BHI,BHI,IBRD countries classified as high income,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,BHR,BHR,Bahrain,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,BHS,BHS,"Bahamas, The",include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,BIH,BIH,Bosnia and Herzegovina,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,BLA,BLA,Latin America & the Caribbean (IBRD-only countries),aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,BLR,BLR,Belarus,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,BLZ,BLZ,Belize,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,BMN,BMN,"Middle East, North Africa, Afghanistan & Pakistan (IBRD only)",aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,BMU,BMU,Bermuda,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,BOL,BOL,Bolivia,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,BRA,BRA,Brazil,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,BRB,BRB,Barbados,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,BRN,BRN,Brunei Darussalam,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,BSS,BSS,Sub-Saharan Africa (IBRD-only countries),aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,BTN,BTN,Bhutan,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,BWA,BWA,Botswana,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,CAA,CAA,Sub-Saharan Africa (IFC classification),aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,CAF,CAF,Central African Republic,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,CAN,CAN,Canada,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,CEA,CEA,East Asia and the Pacific (IFC classification),aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,CEB,CEB,Central Europe and the Baltics,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,CEU,CEU,Europe and Central Asia (IFC classification),aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,CHE,CHE,Switzerland,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,CHI,,Channel Islands,exclude,World Bank composite has no ISO 3166-1 alpha-3 identity; excluded without sovereign reassignment.
+wdi,CHL,CHL,Chile,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,CHN,CHN,China,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,CIV,CIV,Côte d'Ivoire,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,CLA,CLA,Latin America and the Caribbean (IFC classification),aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,CME,CME,Middle East and North Africa (IFC classification),aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,CMR,CMR,Cameroon,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,COD,COD,Democratic Republic of the Congo,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,COG,COG,Republic of the Congo,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,COL,COL,Colombia,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,COM,COM,Comoros,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,CPV,CPV,Cabo Verde,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,CRI,CRI,Costa Rica,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,CSA,CSA,South Asia (IFC classification),aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,CSS,CSS,Caribbean small states,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,CUB,CUB,Cuba,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,CUW,CUW,Curacao,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,CYM,CYM,Cayman Islands,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,CYP,CYP,Cyprus,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,CZE,CZE,Czechia,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,DEA,DEA,East Asia & Pacific (IDA-eligible countries),aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,DEC,DEC,Europe & Central Asia (IDA-eligible countries),aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,DEU,DEU,Germany,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,DJI,DJI,Djibouti,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,DLA,DLA,Latin America & the Caribbean (IDA-eligible countries),aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,DMA,DMA,Dominica,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,DMN,DMN,"Middle East, North Africa, Afghanistan & Pakistan (IDA total)",aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,DNK,DNK,Denmark,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,DNS,DNS,IDA countries in Sub-Saharan Africa not classified as fragile situations,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,DOM,DOM,Dominican Republic,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,DSA,DSA,South Asia (IDA-eligible countries),aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,DSF,DSF,IDA countries in Sub-Saharan Africa classified as fragile situations,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,DSS,DSS,Sub-Saharan Africa (IDA-eligible countries),aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,DZA,DZA,Algeria,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,EAP,EAP,East Asia & Pacific (excluding high income),aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,EAR,EAR,Early-demographic dividend,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,EAS,EAS,East Asia & Pacific,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,ECA,ECA,Europe & Central Asia (excluding high income),aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,ECS,ECS,Europe & Central Asia,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,ECU,ECU,Ecuador,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,EGY,EGY,"Egypt, Arab Rep.",include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,EMU,EMU,Euro area,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,ERI,ERI,Eritrea,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,ESP,ESP,Spain,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,EST,EST,Estonia,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,ETH,ETH,Ethiopia,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,EUU,EUU,European Union,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,FIN,FIN,Finland,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,FJI,FJI,Fiji,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,FRA,FRA,France,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,FRO,FRO,Faroe Islands,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,FSM,FSM,"Micronesia, Fed. Sts.",include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,FXS,FXS,"IDA countries classified as fragile situations, excluding Sub-Saharan Africa",aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,GAB,GAB,Gabon,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,GBR,GBR,United Kingdom,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,GEO,GEO,Georgia,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,GHA,GHA,Ghana,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,GIB,GIB,Gibraltar,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,GIN,GIN,Guinea,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,GMB,GMB,"Gambia, The",include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,GNB,GNB,Guinea-Bissau,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,GNQ,GNQ,Equatorial Guinea,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,GRC,GRC,Greece,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,GRD,GRD,Grenada,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,GRL,GRL,Greenland,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,GTM,GTM,Guatemala,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,GUM,GUM,Guam,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,GUY,GUY,Guyana,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,HIC,HIC,High income,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,HKG,HKG,"Hong Kong SAR, China",include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,HND,HND,Honduras,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,HPC,HPC,Heavily indebted poor countries (HIPC),aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,HRV,HRV,Croatia,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,HTI,HTI,Haiti,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,HUN,HUN,Hungary,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,IBB,IBB,"IBRD, including blend",aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,IBD,IBD,IBRD only,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,IBT,IBT,IDA & IBRD total,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,IDA,IDA,IDA total,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,IDB,IDB,IDA blend,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,IDN,IDN,Indonesia,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,IDX,IDX,IDA only,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,IMN,IMN,Isle of Man,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,IND,IND,India,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,INX,INX,Not classified,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,IRL,IRL,Ireland,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,IRN,IRN,"Iran, Islamic Rep.",include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,IRQ,IRQ,Iraq,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,ISL,ISL,Iceland,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,ISR,ISR,Israel,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,ITA,ITA,Italy,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,JAM,JAM,Jamaica,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,JOR,JOR,Jordan,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,JPN,JPN,Japan,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,KAZ,KAZ,Kazakhstan,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,KEN,KEN,Kenya,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,KGZ,KGZ,Kyrgyz Republic,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,KHM,KHM,Cambodia,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,KIR,KIR,Kiribati,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,KNA,KNA,St. Kitts and Nevis,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,KOR,KOR,"Korea, Rep.",include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,KWT,KWT,Kuwait,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,LAC,LAC,Latin America & Caribbean (excluding high income),aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,LAO,LAO,Lao PDR,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,LBN,LBN,Lebanon,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,LBR,LBR,Liberia,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,LBY,LBY,Libya,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,LCA,LCA,St. Lucia,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,LCN,LCN,Latin America & Caribbean,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,LDC,LDC,Least developed countries: UN classification,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,LIC,LIC,Low income,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,LIE,LIE,Liechtenstein,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,LKA,LKA,Sri Lanka,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,LMC,LMC,Lower middle income,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,LMY,LMY,Low & middle income,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,LSO,LSO,Lesotho,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,LTE,LTE,Late-demographic dividend,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,LTU,LTU,Lithuania,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,LUX,LUX,Luxembourg,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,LVA,LVA,Latvia,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,MAC,MAC,"Macao SAR, China",include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,MAF,MAF,St. Martin (French part),include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,MAR,MAR,Morocco,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,MCO,MCO,Monaco,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,MDA,MDA,Moldova,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,MDE,MDE,Middle East (developing only),aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,MDG,MDG,Madagascar,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,MDV,MDV,Maldives,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,MEA,MEA,"Middle East, North Africa, Afghanistan & Pakistan",aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,MEX,MEX,Mexico,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,MHL,MHL,Marshall Islands,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,MIC,MIC,Middle income,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,MKD,MKD,North Macedonia,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,MLI,MLI,Mali,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,MLT,MLT,Malta,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,MMR,MMR,Myanmar,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,MNA,MNA,"Middle East, North Africa, Afghanistan & Pakistan (excluding high income)",aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,MNE,MNE,Montenegro,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,MNG,MNG,Mongolia,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,MNP,MNP,Northern Mariana Islands,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,MOZ,MOZ,Mozambique,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,MRT,MRT,Mauritania,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,MUS,MUS,Mauritius,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,MWI,MWI,Malawi,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,MYS,MYS,Malaysia,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,NAC,NAC,North America,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,NAF,NAF,North Africa,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,NAM,NAM,Namibia,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,NCL,NCL,New Caledonia,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,NER,NER,Niger,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,NGA,NGA,Nigeria,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,NIC,NIC,Nicaragua,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,NLD,NLD,Netherlands,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,NOR,NOR,Norway,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,NPL,NPL,Nepal,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,NRS,NRS,Non-resource rich Sub-Saharan Africa countries,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,NRU,NRU,Naoero,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,NXS,NXS,"IDA countries not classified as fragile situations, excluding Sub-Saharan Africa",aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,NZL,NZL,New Zealand,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,OED,OED,OECD members,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,OMN,OMN,Oman,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,OSS,OSS,Other small states,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,PAK,PAK,Pakistan,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,PAN,PAN,Panama,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,PER,PER,Peru,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,PHL,PHL,Philippines,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,PLW,PLW,Palau,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,PNG,PNG,Papua New Guinea,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,POL,POL,Poland,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,PRE,PRE,Pre-demographic dividend,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,PRI,PRI,Puerto Rico (US),include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,PRK,PRK,"Korea, Dem. People's Rep.",include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,PRT,PRT,Portugal,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,PRY,PRY,Paraguay,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,PSE,PSE,West Bank and Gaza,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,PSS,PSS,Pacific island small states,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,PST,PST,Post-demographic dividend,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,PYF,PYF,French Polynesia,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,QAT,QAT,Qatar,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,ROU,ROU,Romania,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,RRS,RRS,Resource rich Sub-Saharan Africa countries,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,RUS,RUS,Russian Federation,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,RWA,RWA,Rwanda,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,SAS,SAS,South Asia,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,SAU,SAU,Saudi Arabia,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,SDN,SDN,Sudan,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,SEN,SEN,Senegal,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,SGP,SGP,Singapore,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,SLB,SLB,Solomon Islands,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,SLE,SLE,Sierra Leone,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,SLV,SLV,El Salvador,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,SMR,SMR,San Marino,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,SOM,SOM,"Somalia, Fed. Rep.",include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,SRB,SRB,Serbia,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,SSA,SSA,Sub-Saharan Africa (excluding high income),aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,SSD,SSD,South Sudan,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,SSF,SSF,Sub-Saharan Africa,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,SST,SST,Small states,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,STP,STP,Sao Tome and Principe,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,SUR,SUR,Suriname,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,SVK,SVK,Slovak Republic,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,SVN,SVN,Slovenia,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,SWE,SWE,Sweden,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,SWZ,SWZ,Eswatini,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,SXM,SXM,Sint Maarten (Dutch part),include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,SXZ,SXZ,Sub-Saharan Africa excluding South Africa,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,SYC,SYC,Seychelles,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,SYR,SYR,Syrian Arab Republic,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,TCA,TCA,Turks and Caicos Islands,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,TCD,TCD,Chad,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,TEA,TEA,East Asia & Pacific (IDA & IBRD countries),aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,TEC,TEC,Europe & Central Asia (IDA & IBRD countries),aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,TGO,TGO,Togo,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,THA,THA,Thailand,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,TJK,TJK,Tajikistan,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,TKM,TKM,Turkmenistan,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,TLA,TLA,Latin America & the Caribbean (IDA & IBRD countries),aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,TLS,TLS,Timor-Leste,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,TMN,TMN,"Middle East, North Africa, Afghanistan & Pakistan (IDA & IBRD)",aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,TON,TON,Tonga,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,TSA,TSA,South Asia (IDA & IBRD),aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,TSS,TSS,Sub-Saharan Africa (IDA & IBRD countries),aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,TTO,TTO,Trinidad and Tobago,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,TUN,TUN,Tunisia,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,TUR,TUR,Türkiye,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,TUV,TUV,Tuvalu,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,TZA,TZA,Tanzania,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,UGA,UGA,Uganda,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,UKR,UKR,Ukraine,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,UMC,UMC,Upper middle income,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,URY,URY,Uruguay,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,USA,USA,United States,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,UZB,UZB,Uzbekistan,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,VCT,VCT,St. Vincent and the Grenadines,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,VEN,VEN,"Venezuela, RB",include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,VGB,VGB,British Virgin Islands,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,VIR,VIR,Virgin Islands (U.S.),include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,VNM,VNM,Vietnam,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,VUT,VUT,Vanuatu,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,WLD,WLD,World,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,WSM,WSM,Samoa,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,XD,HIC,High income,aggregate,WDI observation identity XD explicitly maps to metadata aggregate HIC.
+wdi,XKX,XKX,Kosovo,include,Explicitly included as a separately reported source entity; no sovereignty inference.
+wdi,XM,LIC,Low income,aggregate,WDI observation identity XM explicitly maps to metadata aggregate LIC.
+wdi,XN,LMC,Lower middle income,aggregate,WDI observation identity XN explicitly maps to metadata aggregate LMC.
+wdi,XT,UMC,Upper middle income,aggregate,WDI observation identity XT explicitly maps to metadata aggregate UMC.
+wdi,XY,INX,Not classified,aggregate,WDI observation identity XY explicitly maps to metadata aggregate INX.
+wdi,XZN,XZN,Sub-Saharan Africa excluding South Africa and Nigeria,aggregate,World Bank country metadata explicitly classifies this code as an aggregate.
+wdi,YEM,YEM,"Yemen, Rep.",include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,ZAF,ZAF,South Africa,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,ZMB,ZMB,Zambia,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.
+wdi,ZWE,ZWE,Zimbabwe,include,Explicit WDI ISO3 identity decision validated against World Bank country metadata.

@@ -1,4 +1,94 @@
 {
+  "derived": [
+    {
+      "bytes": 25049,
+      "disclosure_class": "restricted_derived",
+      "key": "aqli",
+      "rows": 723,
+      "schema": {
+        "columns": [
+          "source",
+          "year",
+          "iso3",
+          "display_name",
+          "aqli_years_lost",
+          "imputed"
+        ]
+      },
+      "sha256": "eba0bf75aaf45d983df62834bfbddc304b79ea2fa6f9d880c74dfca0ddf85751"
+    },
+    {
+      "bytes": 231,
+      "disclosure_class": "public_aggregate",
+      "key": "exclusion_summary",
+      "rows": 5,
+      "schema": {
+        "columns": [
+          "source",
+          "stage",
+          "reason_group",
+          "count"
+        ]
+      },
+      "sha256": "0cd86bb352b9b7a9926200d5eac13e00ac7d36a6f55b89baf3e802e677c2ff26"
+    },
+    {
+      "bytes": 116138,
+      "disclosure_class": "restricted_derived",
+      "key": "exclusions",
+      "rows": 1055,
+      "schema": {
+        "columns": [
+          "source",
+          "source_key",
+          "year",
+          "stage",
+          "reason"
+        ]
+      },
+      "sha256": "114296febf93d778e1162806cc8e9c9c995f23212bd3a8efef28d493d3b70e1c"
+    },
+    {
+      "bytes": 19659,
+      "disclosure_class": "restricted_derived",
+      "key": "happiness",
+      "rows": 429,
+      "schema": {
+        "columns": [
+          "source",
+          "year",
+          "iso3",
+          "display_name",
+          "life_ladder",
+          "imputed"
+        ]
+      },
+      "sha256": "1ebad3475988932bf680c09be4cbeb6ff7c941380bebad42ca839a3934e440a4"
+    },
+    {
+      "bytes": 54802,
+      "disclosure_class": "public_aggregate",
+      "key": "wdi",
+      "rows": 651,
+      "schema": {
+        "columns": [
+          "source",
+          "year",
+          "iso3",
+          "display_name",
+          "record_type",
+          "population",
+          "life_expectancy",
+          "ghg_total",
+          "ghg_co2",
+          "ghg_ch4",
+          "ghg_n2o",
+          "imputed"
+        ]
+      },
+      "sha256": "7fbc012193e6d0e359de24cae150a7deb5ff3db016fa57a5a6e28662c7c339aa"
+    }
+  ],
   "schema_version": 1,
   "sources": [
     {
