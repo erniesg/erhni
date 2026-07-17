@@ -143,7 +143,7 @@ def classify_path(config: DisclosureConfig, path: str | Path) -> str | None:
         raise ConfigError(f"path matches multiple disclosure rules: {normalized}")
     if len(matches) == 1:
         return matches[0].disclosure_class
-    if normalized.startswith(("data/", "outputs/")) and normalized != "data/derived/source_manifest.json":
+    if normalized.startswith(("data/", "outputs/")):
         raise ConfigError(f"path has no disclosure classification: {normalized}")
     return None
 

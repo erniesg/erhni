@@ -80,6 +80,28 @@ def test_source_manifest_is_public_aggregate_evidence(disclosure) -> None:
     assert validate_staged_path(disclosure, path) == "public_evidence"
 
 
+def test_source_manifest_fails_closed_if_its_disclosure_rule_is_removed(tmp_path) -> None:
+    policy_path = tmp_path / "disclosure.toml"
+    manifest_rule = """[[disclosure_rule]]
+pattern = "data/derived/source_manifest.json"
+disclosure_class = "public_aggregate"
+
+"""
+    policy_path.write_text(
+        Path("config/disclosure.toml").read_text(encoding="utf-8").replace(manifest_rule, ""),
+        encoding="utf-8",
+    )
+    policy = load_disclosure(policy_path)
+    path = "data/derived/source_manifest.json"
+
+    with pytest.raises(ConfigError, match="disclosure"):
+        classify_path(policy, path)
+    with pytest.raises(ConfigError, match="disclosure"):
+        release_role_for_path(policy, path)
+    with pytest.raises(ConfigError, match="disclosure"):
+        validate_staged_path(policy, path)
+
+
 @pytest.mark.parametrize(
     "path",
     [
