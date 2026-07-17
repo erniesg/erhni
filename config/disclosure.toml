@@ -1,0 +1,103 @@
+[policy]
+# Rights changes are made only through a reviewed commit to this policy file.
+rights_change_requires_reviewed_config_commit = true
+
+[[disclosure_rule]]
+pattern = "data/raw/external/**"
+disclosure_class = "restricted_source"
+
+[[disclosure_rule]]
+pattern = "data/snapshots/wdi/**"
+disclosure_class = "public_snapshot"
+
+[[disclosure_rule]]
+pattern = "data/snapshots/wdi_archive/**"
+disclosure_class = "public_snapshot"
+
+[[disclosure_rule]]
+pattern = "data/snapshots/edgar/**"
+disclosure_class = "public_snapshot"
+
+[[disclosure_rule]]
+pattern = "data/derived/restricted/**"
+disclosure_class = "restricted_derived"
+
+[[disclosure_rule]]
+pattern = "outputs/restricted/**"
+disclosure_class = "restricted_derived"
+
+[[disclosure_rule]]
+pattern = "outputs/review/**"
+disclosure_class = "review_only"
+
+[[disclosure_rule]]
+pattern = "data/derived/public/**"
+disclosure_class = "public_aggregate"
+
+[[disclosure_rule]]
+pattern = "outputs/public/**"
+disclosure_class = "public_aggregate"
+
+[[release_role_rule]]
+pattern = "src/**"
+release_role = "public_code"
+
+[[release_role_rule]]
+pattern = "tests/**"
+release_role = "public_code"
+
+[[release_role_rule]]
+pattern = "scripts/**"
+release_role = "public_code"
+
+[[release_role_rule]]
+pattern = "config/**"
+release_role = "public_config"
+
+[[release_role_rule]]
+pattern = "pyproject.toml"
+release_role = "public_config"
+
+[[release_role_rule]]
+pattern = "uv.lock"
+release_role = "public_config"
+
+[[release_role_rule]]
+pattern = ".python-version"
+release_role = "public_config"
+
+[[release_role_rule]]
+pattern = ".gitignore"
+release_role = "public_config"
+
+[[release_role_rule]]
+pattern = "docs/**"
+release_role = "public_documentation"
+
+[[release_role_rule]]
+pattern = "data/derived/source_manifest.json"
+release_role = "public_evidence"
+
+[[release_role_rule]]
+pattern = ".agent/evidence/**"
+release_role = "public_evidence"
+
+[[release_role_rule]]
+pattern = "data/snapshots/wdi/**"
+release_role = "public_snapshot"
+
+[[release_role_rule]]
+pattern = "data/snapshots/wdi_archive/**"
+release_role = "public_snapshot"
+
+[[release_role_rule]]
+pattern = "data/snapshots/edgar/**"
+release_role = "public_snapshot"
+
+[[release_role_rule]]
+pattern = "data/derived/public/**"
+release_role = "public_aggregate"
+
+[[release_role_rule]]
+pattern = "outputs/public/**"
+release_role = "public_aggregate"
