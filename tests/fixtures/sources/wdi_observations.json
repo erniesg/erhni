@@ -1,0 +1,11 @@
+[
+  {"page": 1, "pages": 1, "per_page": 20, "total": 6, "sourceid": "2", "lastupdated": "2026-07-13"},
+  [
+    {"indicator": {"id": "SP.POP.TOTL", "value": "Population, total"}, "country": {"id": "CN", "value": "China"}, "countryiso3code": "CHN", "date": "2018", "value": 100, "unit": "", "obs_status": "", "decimal": 0},
+    {"indicator": {"id": "SP.POP.TOTL", "value": "Population, total"}, "country": {"id": "CN", "value": "China"}, "countryiso3code": "CHN", "date": "2017", "value": 99, "unit": "", "obs_status": "", "decimal": 0},
+    {"indicator": {"id": "SP.POP.TOTL", "value": "Population, total"}, "country": {"id": "CN", "value": "China"}, "countryiso3code": "CHN", "date": "2016", "value": 98, "unit": "", "obs_status": "", "decimal": 0},
+    {"indicator": {"id": "SP.POP.TOTL", "value": "Population, total"}, "country": {"id": "1W", "value": "World"}, "countryiso3code": "WLD", "date": "2018", "value": 1000, "unit": "", "obs_status": "", "decimal": 0},
+    {"indicator": {"id": "SP.POP.TOTL", "value": "Population, total"}, "country": {"id": "1W", "value": "World"}, "countryiso3code": "WLD", "date": "2017", "value": 990, "unit": "", "obs_status": "", "decimal": 0},
+    {"indicator": {"id": "SP.POP.TOTL", "value": "Population, total"}, "country": {"id": "1W", "value": "World"}, "countryiso3code": "WLD", "date": "2016", "value": 980, "unit": "", "obs_status": "", "decimal": 0}
+  ]
+]

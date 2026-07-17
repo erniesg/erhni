@@ -10,3 +10,4 @@ data/raw/external/
 data/derived/restricted/
 outputs/restricted/
 outputs/review/
+*.part
