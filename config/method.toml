@@ -1,0 +1,40 @@
+[analysis]
+years = [2016, 2017, 2018]
+
+[universes]
+burden = "aqli_full_wdi_population"
+allocation_denominator = "wdi_wld"
+happiness_weight = "balanced_analysis_panel"
+ranking = "balanced_complete_case"
+
+[nhly]
+neutral_point = 5.0
+scale = 10.0
+
+[responsibility]
+headline_weight = "population_weighted_net_happiness"
+nonpositive_weight = "error"
+max_abs_wld_reconciliation_share = 0.05
+
+[ghg]
+primary_family = "edgar_ar5_excl_lulucf"
+total_indicator = "EN.GHG.ALL.MT.CE.AR5"
+co2_indicator = "EN.GHG.CO2.MT.CE.AR5"
+ch4_indicator = "EN.GHG.CH4.MT.CE.AR5"
+n2o_indicator = "EN.GHG.N2O.MT.CE.AR5"
+fallback_family = "none"
+
+[sensitivity]
+gross_penalty_weight = true
+fixed_penalty_weights = [0.05, 0.10, 0.25, 0.50, 0.765, 1.00]
+neutral_points = [4.0, 4.5, 5.0, 5.1]
+
+[uncertainty]
+aqli_rounding_half_width = 0.05
+lower_bound_floor = 0.0
+label = "rounding_sensitivity_not_confidence_interval"
+
+[reconciliation]
+decomposition = "shapley"
+absolute_tolerance = 1e-9
+relative_tolerance = 1e-10

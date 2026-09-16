@@ -1,0 +1,22 @@
+[project]
+name = "erhni"
+version = "0.1.0"
+description = "Reproducible Environmental Responsible Happy Nation Index analysis"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "pandas>=3,<4",
+    "xlrd>=2,<3",
+]
+
+[build-system]
+requires = ["hatchling>=1.30,<2"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8,<9",
+    "ruff>=0.6,<1",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

@@ -1,0 +1,238 @@
+[wdi]
+lastupdated = "2026-07-13"
+
+[[source]]
+key = "whr_2022_table_2_1"
+url = "https://web.archive.org/web/20220715181822id_/https://happiness-report.s3.amazonaws.com/2022/DataForTable2.1.xls"
+path = "data/raw/external/whr_2022_data_for_table_2_1.xls"
+publisher = "World Happiness Report"
+source_family = "whr_2022_annual_table_2_1"
+unit = "Cantril ladder score"
+expected_source_id = "DataForTable2.1"
+access_date = "2026-07-17"
+redistributable = false
+sha256 = "f118e7f606f091b978edc674242b491b79ee37bea6cb2b5243f805f5f39ccfa4"
+provenance_url = "https://web.archive.org/web/20220715181822id_/https://worldhappiness.report/ed/2022/"
+archive_capture = "2022-07-15T18:18:22Z"
+
+[[source]]
+key = "aqli_2025_gadm0"
+url = "https://cdn.sanity.io/files/3o8tp68r/production/4d1bc319df6657d5ced2fdfc38604e0da13cc812.csv"
+path = "data/raw/external/aqli_2025_gadm0.csv"
+publisher = "Energy Policy Institute at the University of Chicago"
+source_family = "aqli_2025_country_gadm0"
+unit = "life expectancy years lost per resident"
+expected_source_id = "AQLI 2025 country-level data"
+access_date = "2026-07-17"
+redistributable = false
+sha256 = "65bf00ba910932d408debb37dce3ea769eb2f1d3d0aef81f223b77947b81be73"
+benchmark = 5.0
+source_updated_at = "2025-08-19T13:13:14Z"
+
+[[source]]
+key = "wdi_population"
+url = "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?date=2016:2018&format=json&per_page=20000"
+path = "data/snapshots/wdi/SP.POP.TOTL.json"
+publisher = "World Bank"
+source_family = "wdi_current"
+unit = "people"
+expected_source_id = "2"
+expected_indicator = "SP.POP.TOTL"
+access_date = "2026-07-17"
+redistributable = true
+sha256 = "37c342714703650a21a159153626e42f114005220d77e60eeff835c70b95bd66"
+
+[[source]]
+key = "wdi_life_expectancy"
+url = "https://api.worldbank.org/v2/country/all/indicator/SP.DYN.LE00.IN?date=2016:2018&format=json&per_page=20000"
+path = "data/snapshots/wdi/SP.DYN.LE00.IN.json"
+publisher = "World Bank"
+source_family = "wdi_current"
+unit = "years"
+expected_source_id = "2"
+expected_indicator = "SP.DYN.LE00.IN"
+access_date = "2026-07-17"
+redistributable = true
+sha256 = "5bf9cb1fab1a58a5eef347da0fe0356fb80ff1539171deebc41455f8ecf47693"
+
+[[source]]
+key = "wdi_ghg_total"
+url = "https://api.worldbank.org/v2/country/all/indicator/EN.GHG.ALL.MT.CE.AR5?date=2016:2018&format=json&per_page=20000"
+path = "data/snapshots/wdi/EN.GHG.ALL.MT.CE.AR5.json"
+publisher = "World Bank / EDGAR"
+source_family = "edgar_ar5_excl_lulucf"
+unit = "Mt CO2 equivalent"
+expected_source_id = "2"
+expected_indicator = "EN.GHG.ALL.MT.CE.AR5"
+access_date = "2026-07-17"
+redistributable = true
+sha256 = "68207c08d82f19942abb8a4437449079a4d46a645d4136ccb7698ab983d79b58"
+
+[[source]]
+key = "wdi_ghg_co2"
+url = "https://api.worldbank.org/v2/country/all/indicator/EN.GHG.CO2.MT.CE.AR5?date=2016:2018&format=json&per_page=20000"
+path = "data/snapshots/wdi/EN.GHG.CO2.MT.CE.AR5.json"
+publisher = "World Bank / EDGAR"
+source_family = "edgar_ar5_excl_lulucf"
+unit = "Mt CO2 equivalent"
+expected_source_id = "2"
+expected_indicator = "EN.GHG.CO2.MT.CE.AR5"
+access_date = "2026-07-17"
+redistributable = true
+sha256 = "a97b7839bc570ff012478ca1db8661c4ae4ca502ee4d8188a86ea922eed0f8d0"
+
+[[source]]
+key = "wdi_ghg_ch4"
+url = "https://api.worldbank.org/v2/country/all/indicator/EN.GHG.CH4.MT.CE.AR5?date=2016:2018&format=json&per_page=20000"
+path = "data/snapshots/wdi/EN.GHG.CH4.MT.CE.AR5.json"
+publisher = "World Bank / EDGAR"
+source_family = "edgar_ar5_excl_lulucf"
+unit = "Mt CO2 equivalent"
+expected_source_id = "2"
+expected_indicator = "EN.GHG.CH4.MT.CE.AR5"
+access_date = "2026-07-17"
+redistributable = true
+sha256 = "5a5dbd12458e21022f3264faa43349dd94a061a68fb552889f5c6d806605eae4"
+
+[[source]]
+key = "wdi_ghg_n2o"
+url = "https://api.worldbank.org/v2/country/all/indicator/EN.GHG.N2O.MT.CE.AR5?date=2016:2018&format=json&per_page=20000"
+path = "data/snapshots/wdi/EN.GHG.N2O.MT.CE.AR5.json"
+publisher = "World Bank / EDGAR"
+source_family = "edgar_ar5_excl_lulucf"
+unit = "Mt CO2 equivalent"
+expected_source_id = "2"
+expected_indicator = "EN.GHG.N2O.MT.CE.AR5"
+access_date = "2026-07-17"
+redistributable = true
+sha256 = "e862b242cccfc9b78ba92c2f2341e5da888061d00629ab74ab5d347202ee2b79"
+
+[[source]]
+key = "wdi_country_metadata"
+url = "https://api.worldbank.org/v2/country?format=json&per_page=400"
+path = "data/snapshots/wdi/country.metadata.json"
+publisher = "World Bank"
+source_family = "wdi_current"
+unit = "metadata"
+expected_source_id = "2"
+expected_indicator = "country"
+access_date = "2026-07-17"
+redistributable = true
+sha256 = "d29d57f8adf954c5e2a1520a02fb2c7b45575d8db3bd327a9dff47d66914231c"
+
+[[source]]
+key = "wdi_population_metadata"
+url = "https://api.worldbank.org/v2/indicator/SP.POP.TOTL?format=json"
+path = "data/snapshots/wdi/SP.POP.TOTL.metadata.json"
+publisher = "World Bank"
+source_family = "wdi_current"
+unit = "metadata"
+expected_source_id = "2"
+expected_indicator = "SP.POP.TOTL"
+access_date = "2026-07-17"
+redistributable = true
+sha256 = "2f8491efc00bf2c0995112ff8e87aba69e5e9d22d0880b22f7e3a4ec757ba05c"
+
+[[source]]
+key = "wdi_life_expectancy_metadata"
+url = "https://api.worldbank.org/v2/indicator/SP.DYN.LE00.IN?format=json"
+path = "data/snapshots/wdi/SP.DYN.LE00.IN.metadata.json"
+publisher = "World Bank"
+source_family = "wdi_current"
+unit = "metadata"
+expected_source_id = "2"
+expected_indicator = "SP.DYN.LE00.IN"
+access_date = "2026-07-17"
+redistributable = true
+sha256 = "a39cb6fddfbbb953053690366243dffe77a266c4deae79c46ce5a06da9f5fc31"
+
+[[source]]
+key = "wdi_ghg_total_metadata"
+url = "https://api.worldbank.org/v2/indicator/EN.GHG.ALL.MT.CE.AR5?format=json"
+path = "data/snapshots/wdi/EN.GHG.ALL.MT.CE.AR5.metadata.json"
+publisher = "World Bank / EDGAR"
+source_family = "edgar_ar5_excl_lulucf"
+unit = "metadata"
+expected_source_id = "2"
+expected_indicator = "EN.GHG.ALL.MT.CE.AR5"
+access_date = "2026-07-17"
+redistributable = true
+sha256 = "cc3dc0cec5b9a6bd3874cfc8c3e4f0e7ee5232f8726927d9784b6abdcc8e3ed8"
+
+[[source]]
+key = "wdi_ghg_co2_metadata"
+url = "https://api.worldbank.org/v2/indicator/EN.GHG.CO2.MT.CE.AR5?format=json"
+path = "data/snapshots/wdi/EN.GHG.CO2.MT.CE.AR5.metadata.json"
+publisher = "World Bank / EDGAR"
+source_family = "edgar_ar5_excl_lulucf"
+unit = "metadata"
+expected_source_id = "2"
+expected_indicator = "EN.GHG.CO2.MT.CE.AR5"
+access_date = "2026-07-17"
+redistributable = true
+sha256 = "b589d061bd920762db1bc986fd2e8f75cb25aeb940509907a1906fd40484e839"
+
+[[source]]
+key = "wdi_ghg_ch4_metadata"
+url = "https://api.worldbank.org/v2/indicator/EN.GHG.CH4.MT.CE.AR5?format=json"
+path = "data/snapshots/wdi/EN.GHG.CH4.MT.CE.AR5.metadata.json"
+publisher = "World Bank / EDGAR"
+source_family = "edgar_ar5_excl_lulucf"
+unit = "metadata"
+expected_source_id = "2"
+expected_indicator = "EN.GHG.CH4.MT.CE.AR5"
+access_date = "2026-07-17"
+redistributable = true
+sha256 = "708193dc91019e5dee1d8c426a67fca4967ca2fedac12598ab64730e4037375e"
+
+[[source]]
+key = "wdi_ghg_n2o_metadata"
+url = "https://api.worldbank.org/v2/indicator/EN.GHG.N2O.MT.CE.AR5?format=json"
+path = "data/snapshots/wdi/EN.GHG.N2O.MT.CE.AR5.metadata.json"
+publisher = "World Bank / EDGAR"
+source_family = "edgar_ar5_excl_lulucf"
+unit = "metadata"
+expected_source_id = "2"
+expected_indicator = "EN.GHG.N2O.MT.CE.AR5"
+access_date = "2026-07-17"
+redistributable = true
+sha256 = "c4d6c1792a8a4ce42271b0237e08af0a1362de841965cad4a7f6a7131e0adf8e"
+
+[[source]]
+key = "wdi_archive_total_ghg"
+url = "https://api.worldbank.org/v2/en/indicator/EN.ATM.GHGT.KT.CE?downloadformat=csv"
+path = "data/snapshots/wdi_archive/EN.ATM.GHGT.KT.CE.zip"
+publisher = "World Bank"
+source_family = "wdi_archive_ds57"
+unit = "kt CO2 equivalent"
+expected_source_id = "57"
+expected_indicator = "EN.ATM.GHGT.KT.CE"
+access_date = "2026-07-17"
+redistributable = true
+sha256 = "ba749f90dc55b7373c3b7b7eab0cd7c8eb5dac9a070c6a746225c90f94271ba8"
+
+[[source]]
+key = "wdi_archive_ch4"
+url = "https://api.worldbank.org/v2/en/indicator/EN.ATM.METH.KT.CE?downloadformat=csv"
+path = "data/snapshots/wdi_archive/EN.ATM.METH.KT.CE.zip"
+publisher = "World Bank"
+source_family = "wdi_archive_ds57"
+unit = "kt CO2 equivalent"
+expected_source_id = "57"
+expected_indicator = "EN.ATM.METH.KT.CE"
+access_date = "2026-07-17"
+redistributable = true
+sha256 = "c1bf878a5bad6151bde1258e5f4c25fddfa9a5862180927c6e25e2127d2fbb54"
+
+[[source]]
+key = "wdi_archive_n2o"
+url = "https://api.worldbank.org/v2/en/indicator/EN.ATM.NOXE.KT.CE?downloadformat=csv"
+path = "data/snapshots/wdi_archive/EN.ATM.NOXE.KT.CE.zip"
+publisher = "World Bank"
+source_family = "wdi_archive_ds57"
+unit = "kt CO2 equivalent"
+expected_source_id = "57"
+expected_indicator = "EN.ATM.NOXE.KT.CE"
+access_date = "2026-07-17"
+redistributable = true
+sha256 = "d9aec51af3b04beeeb0389e218eb43b18f1a526d4d42bc3325726ffd866efad9"

@@ -1,0 +1,13 @@
+[
+  {"page": 1, "pages": 1, "per_page": "50", "total": 1},
+  [
+    {
+      "id": "EN.GHG.CH4.MT.CE.AR5",
+      "name": "Methane (CH4) emissions (total) excluding LULUCF (Mt CO2e)",
+      "unit": "",
+      "source": {"id": "2", "value": "World Development Indicators"},
+      "sourceNote": "Excludes LULUCF and is standardized to carbon dioxide equivalent values using IPCC AR5 global warming potentials.",
+      "sourceOrganization": "EDGAR"
+    }
+  ]
+]
